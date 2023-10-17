@@ -3,6 +3,9 @@ import { BsSearch } from "react-icons/bs";
 import { GrNotification } from "react-icons/gr";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
+import { signOut } from "firebase/auth";
+import { auth } from "../auth/firebase-config";
+import { useNavigate } from "react-router-dom";
 import { SlCalender } from "react-icons/sl";
 import { BsPerson } from "react-icons/bs";
 
@@ -14,6 +17,17 @@ const Hero = () => {
     checkIn: "",
     persons: "",
   });
+  const navigate = useNavigate();
+
+  const LogOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.clear();
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -86,7 +100,10 @@ const Hero = () => {
           </div>
           <div className="alert">
             <GrNotification className="bell" />
-            <img src={avatar} alt="profile" className="mobile-avatar" />
+            <div className="sign-out">
+              <button className="sign" onClick={LogOut}>Log out</button>
+              <img src={avatar} alt="profile" className="mobile-avatar" />
+            </div>
           </div>
           {formData.persons && <div className="notif">{formData.persons}</div>}
         </div>

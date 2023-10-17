@@ -138,6 +138,9 @@ input:valid {
   border-radius: 50%;
   background: orangered;
 }
+.sign {
+  display: none;
+}
 .header-pix {
   margin: 1rem 0 0 1rem;
 }
@@ -554,12 +557,26 @@ select,
     width: 80px;
     height: 50px;
     display: flex;
+    margin-top: 1rem;
     justify-content: space-between;
     align-items: center;
     border-radius: 0;
   }
   .bell {
     position: static;
+  }
+  .sign-out {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+  .sign {
+    display: block;
+    padding: 0.2em 0.2em;
+    border-radius: 5px;
+    border: none;
+    background: rgb(107, 107, 149);
+    color: #fff;
   }
   .header {
     flex-direction: column-reverse;
@@ -729,6 +746,9 @@ select,
     width: 100%;
   }
   .lightbox {
+    display: none;
+  }
+  .sign {
     display: none;
   }
   .button {
