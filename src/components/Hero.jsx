@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GrNotification } from "react-icons/gr";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import { useGetUserInfo } from "../hooks/useGetUserInfo";
 import { SlCalender } from "react-icons/sl";
 import { BsPerson } from "react-icons/bs";
 
@@ -57,6 +58,8 @@ const Hero = () => {
     setDate(currentDay);
   };
   setInterval(updateTime, 1000);
+
+  const { avatar } = useGetUserInfo();
   return (
     <main>
       <div className="bar"></div>
@@ -83,6 +86,7 @@ const Hero = () => {
           </div>
           <div className="alert">
             <GrNotification className="bell" />
+            <img src={avatar} alt="profile" className="mobile-avatar" />
           </div>
           {formData.persons && <div className="notif">{formData.persons}</div>}
         </div>

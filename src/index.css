@@ -84,6 +84,9 @@ body {
   justify-content: space-between;
   margin: 1rem 0 0 1rem;
 }
+.mobile-avatar {
+  display: none;
+}
 form {
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   border: 1px solid hsl(0, 1%, 83%);
@@ -308,7 +311,7 @@ select,
 .destinations {
   display: flex;
   gap: 2rem;
-  min-width: 900px;
+  min-width: 800px;
   padding: 1rem;
 }
 .city {
@@ -430,7 +433,7 @@ select,
 /* Explore styles */
 .explore {
   display: flex;
-  min-width: 900px;
+  min-width: 800px;
   padding: 1rem;
   gap: 2rem;
 }
@@ -540,6 +543,24 @@ select,
   .sidebar {
     display: none;
   }
+  .mobile-avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .alert {
+    border: none;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
+  }
+  .bell {
+    position: static;
+  }
   .header {
     flex-direction: column-reverse;
     width: 100%;
@@ -566,7 +587,7 @@ select,
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 2rem;
   }
   .lightbox {
@@ -634,7 +655,7 @@ select,
   .button {
     padding: 0.4em 1.5em;
     border: none;
-    width: 400px;
+    width: 410px;
     border-radius: 10px;
     background: transparent;
   }
@@ -688,6 +709,9 @@ select,
 @media (min-width: 600px) and (max-width: 1000px) {
   .container {
     max-width: 1000px;
+  }
+  .mobile-avatar {
+    display: none;
   }
   .travel-info {
     width: 90%;
