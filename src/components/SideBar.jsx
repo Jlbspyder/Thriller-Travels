@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { AiTwotoneDashboard } from "react-icons/ai";
 import { BiSolidCity, BiEnvelope } from "react-icons/bi";
 import { BsHeart } from "react-icons/bs";
@@ -43,28 +43,46 @@ const SideBar = ({ openMenu, close }) => {
           <p className="profile-name">{name}</p>
         </div>
         <div className="sidebar-bottom">
-          <div className="dashboard">
-            <AiTwotoneDashboard />
-            <p className={location.pathname === "/homepage" ? "live" : ""}>
-              Dashboard
+        <Link to='/'>
+          <div className="dashboard" onClick={close}>
+            <AiTwotoneDashboard  className={location.pathname === "/homepage" ? "icon-live" : "icon"} />
+              <p className={location.pathname === "/homepage" ? "live" : ""}>
+                    Dashboard
+              </p>
+          </div>
+        </Link> 
+        <Link to='/explore'>
+          <div className="explore-city" onClick={close}>
+            <BiSolidCity  className={location.pathname === "/explore" ? "icon-live" : "icon"} />
+            <p className={location.pathname === "/explore" ? "live" : ""}>
+              Explore City
             </p>
           </div>
-          <div className="explore-city">
-            <BiSolidCity />
-            <p>Explore City</p>
+        </Link>
+        <Link to='/ticket'>
+          <div className="ticket" onClick={close}>
+            <BiEnvelope className={location.pathname === "/ticket" ? "icon-live" : "icon"} />
+            <p className={location.pathname === "/ticket" ? "live" : ""}>
+              Ticket
+            </p>
           </div>
-          <div className="ticket">
-            <BiEnvelope />
-            <p>Ticket</p>
-          </div>
+        </Link>
+        <Link to='/favorites' onClick={close}>
           <div className="fav">
-            <BsHeart />
-            <p>Favorites</p>
+            <BsHeart className={location.pathname === "/favorites" ? "icon-live" : "icon"} />
+            <p className={location.pathname === "/favorites" ? "live" : ""}>
+              Favorites
+            </p>
           </div>
+        </Link>
+        <Link to='/setting' onClick={close}>
           <div className="setting">
-            <TbSettings2 />
-            <p>Setting</p>
+            <TbSettings2 className={location.pathname === "/setting" ? "icon-live" : "icon"} />
+            <p className={location.pathname === "/setting" ? "live" : ""}>
+              Setting
+            </p>
           </div>
+        </Link>
         </div>
         <div className="log-out" onClick={LogOut}>
           <div className="angle-right">

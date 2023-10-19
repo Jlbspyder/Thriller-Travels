@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
 img {
   max-width: 100%;
 }
@@ -458,7 +461,7 @@ select,
 .edit-bg {
   position: absolute;
   bottom: -5%;
-  left: 40%;
+  left: 35%;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -514,6 +517,12 @@ select,
 .live {
   color: rgb(19, 19, 36);
 }
+.icon {
+  color: rgb(166, 162, 162);
+}
+.icon-live {
+  color: rgb(19, 19, 36);
+}
 .log-out {
   margin-left: 2.8rem;
   align-self: start;
@@ -552,10 +561,7 @@ select,
   .sidebar {
     position: fixed;
     inset: 0 0 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    /* height: 100vh; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     background: hsl(0, 1%, 83%);
     z-index: 9999;
@@ -576,7 +582,7 @@ select,
   }
   .sidebar-bottom p,
   .log-out p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .log-out {
     margin-left: -4rem;
@@ -616,11 +622,11 @@ select,
   }
   .profile-name {
     color: rgb(19, 19, 36);
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .profile-pix {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin-top: 1rem;
     border-radius: 50%;
   }
