@@ -17,11 +17,6 @@ const Destination = () => {
     setCurrentIndex(currentIndex === length - 1 ? 0 : currentIndex + 1);
   };
 
-  // const handleClick = (item, index) => {
-  //   setCurrentIndex(index)
-  //   selectedImg(item.title)
-  // }
-
   return (
     <section>
       <div className="destination__header">

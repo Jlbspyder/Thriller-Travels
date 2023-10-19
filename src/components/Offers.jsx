@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { locations } from "../data";
 import { BsHeart } from "react-icons/bs";
+import LightBox from "./LightBox";
 
 const Offers = () => {
+  const [selectedImg, setSelectedImg] = useState(null);
   return (
     <section>
       <div className="destination__header">
@@ -13,7 +15,7 @@ const Offers = () => {
       </div>
       <div className="rooms">
         {locations.map((item, index) => (
-          <div key={index} className="rooms__info">
+          <div key={index} className="rooms__info" onClick={() => setSelectedImg(item.img)}>
             <img src={item.img} alt="room" className="room" />
             <h5>{item.title}</h5>
             <div className="place">
@@ -29,6 +31,9 @@ const Offers = () => {
           </div>
         ))}
       </div>
+      {selectedImg && (
+        <LightBox selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
     </section>
   );
 };
