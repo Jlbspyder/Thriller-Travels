@@ -8,8 +8,9 @@ import { auth } from "../auth/firebase-config";
 import { useNavigate } from "react-router-dom";
 import { SlCalender } from "react-icons/sl";
 import { BsPerson } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-const Hero = () => {
+const Hero = ({ open }) => {
   const currentDay = new Date();
   const [date, setDate] = useState(currentDay);
   const [formData, setFormData] = useState({
@@ -38,6 +39,7 @@ const Hero = () => {
       };
     });
   };
+
   const weekday = [
     "Sunday",
     "Monday",
@@ -78,12 +80,12 @@ const Hero = () => {
     <main>
       <div className="bar"></div>
       <div className="bar2"></div>
+      {<GiHamburgerMenu className="hamburger" onClick={open} />}
       <HiOutlineLocationMarker className="location-icon" />
       <SlCalender className="calender-icon" />
       <BsPerson className="person-icon" />
       <div className="header">
         <div className="search">
-          <h1>MimaBooking</h1>
           <form>
             <BsSearch className="search-icon" />
             <input
@@ -100,10 +102,6 @@ const Hero = () => {
           </div>
           <div className="alert">
             <GrNotification className="bell" />
-            <div className="sign-out">
-              <button className="sign" onClick={LogOut}>Log out</button>
-              <img src={avatar} alt="profile" className="mobile-avatar" />
-            </div>
           </div>
           {formData.persons && <div className="notif">{formData.persons}</div>}
         </div>

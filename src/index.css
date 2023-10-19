@@ -141,6 +141,9 @@ input:valid {
 .sign {
   display: none;
 }
+.hamburger {
+  display: none;
+}
 .header-pix {
   margin: 1rem 0 0 1rem;
 }
@@ -449,6 +452,9 @@ select,
   align-items: center;
   justify-content: space-between;
 }
+.close-menu {
+  display: none;
+}
 .edit-bg {
   position: absolute;
   bottom: -5%;
@@ -544,26 +550,84 @@ select,
     padding-inline: 1rem;
   }
   .sidebar {
-    display: none;
+    position: fixed;
+    inset: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background: hsl(0, 1%, 83%);
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   }
+  .sidebar.mobile {
+    transform: translateX(0%);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    font-size: 2rem;
+    color: rgb(19, 19, 36);
+  }
+  .sidebar-bottom p,
+  .log-out p {
+    font-size: 2rem;
+  }
+  .log-out {
+    margin-left: -4rem;
+    align-self: center;
+  }
+  .hamburger, .close-menu {
+    display: block;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    z-index: 9999;
+    color: rgb(19, 19, 36);
+    cursor: pointer;
+  }
+  .close-menu {
+   columns: rgb(19, 19, 36);
+  }
+.dashboard,
+.explore-city,
+.ticket,
+.fav,
+.setting,
+.log-out {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
   .mobile-avatar {
     display: block;
     width: 50px;
     height: 50px;
     border-radius: 50%;
   }
-  .alert {
-    border: none;
-    width: 80px;
-    height: 50px;
-    display: flex;
-    margin-top: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 0;
+  .profile-name {
+    color: rgb(19, 19, 36);
+    font-size: 2rem;
   }
-  .bell {
-    position: static;
+  .profile-pix {
+    width: 200px;
+    height: 200px;
+    margin-top: 1rem;
+    border-radius: 50%;
+  }
+  .edit-bg {
+    bottom: -6%;
+    width: 50px;
+    height: 50px;
   }
   .sign-out {
     display: flex;
@@ -597,14 +661,15 @@ select,
   }
   .notif {
     top: -10%;
-    right: 26%;
+    left: 51%;
   }
   .date {
-    margin: 0;
+    margin-bottom: 1rem;
     position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     gap: 2rem;
   }
   .lightbox {

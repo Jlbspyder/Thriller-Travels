@@ -10,8 +10,9 @@ import { signOut } from "firebase/auth";
 import { auth } from "../auth/firebase-config";
 import { useNavigate } from "react-router-dom";
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
+import { IoMdClose } from "react-icons/io";
 
-const SideBar = () => {
+const SideBar = ({ openMenu, close }) => {
   const { name, avatar } = useGetUserInfo();
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,7 +28,8 @@ const SideBar = () => {
   };
   return (
     <aside>
-      <div className="sidebar">
+      <div className={openMenu ? "sidebar mobile" : "sidebar"}>
+        {<IoMdClose className="close-menu" onClick={close} />}
         <div className="sidebar-top">
           <h3>MimaBooking</h3>
           {avatar && (
@@ -76,4 +78,3 @@ const SideBar = () => {
 };
 
 export default SideBar;
-

@@ -4,10 +4,10 @@ import Destination from '../components/Destination'
 import Explore from '../components/Explore'
 import Offers from '../components/Offers'
 
-const HomePage = () => {
+const HomePage = ({open, close, openMenu}) => {
   return (
     <div className='container'>
-      <Hero />
+      <Hero open={open} close={close} openMenu={openMenu} />
       <Destination />
       <Offers />
       <Explore />
