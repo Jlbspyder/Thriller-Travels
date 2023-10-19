@@ -2,9 +2,11 @@ import React from 'react'
 
 const ExploreCity = () => {
   return (
-    <div className='container'>
-      EXPLORE CITY
-    </div>
+    <section id="explore">
+      <div className='container'>
+        EXPLORE CITY
+      </div>
+    </section>
   )
 }
 

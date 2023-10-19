@@ -2,9 +2,11 @@ import React from 'react'
 
 const Favorites = () => {
   return (
-    <div className='container'>
-      FAVORITES
-    </div>
+    <section id='fav'>
+      <div className='container'>
+        FAVORITES
+      </div>
+    </section>
   )
 }
 

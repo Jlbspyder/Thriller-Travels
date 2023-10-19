@@ -77,7 +77,7 @@ const Hero = ({ open }) => {
 
   const { avatar } = useGetUserInfo();
   return (
-    <main>
+    <main id="hero">
       <div className="bar"></div>
       <div className="bar2"></div>
       {<GiHamburgerMenu className="hamburger" onClick={open} />}

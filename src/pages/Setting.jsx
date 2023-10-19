@@ -2,9 +2,11 @@ import React from 'react'
 
 const Setting = () => {
   return (
-    <div className='container'>
-      SETTING
-    </div>
+    <section id='setting'>
+      <div className='container'>
+        SETTING
+      </div>
+    </section>
   )
 }
 
