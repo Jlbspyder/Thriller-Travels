@@ -264,8 +264,8 @@ select,
   background: rgb(166, 162, 162);
   z-index: 999;
 }
-#hero, #ticket, #setting, #fav {
-  animation: zoom 1s ease-in-out;
+#hero, #ticket, #setting, #fav, #destination, #offer, #explore, #explore-city {
+  animation: zoom 0.5s ease-in-out;
 }
 
 /* Destination styles */
@@ -284,6 +284,7 @@ select,
   top: 3%;
   left: 30%;
   z-index: 9000;
+  animation: zoom 350ms ease-in-out;
 }
 .lightbox__img {
   position: relative;
@@ -451,9 +452,6 @@ select,
   padding: 1rem;
   gap: 2rem;
 }
-#explore {
-  animation: zoom 1s ease-in-out;
-}
 /* Sidebar styles */
 .sidebar {
   position: absolute;
@@ -606,7 +604,7 @@ select,
   }
   .hamburger, .close-menu {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 2%;
     right: 5%;
     width: 30px;
@@ -686,13 +684,18 @@ select,
     left: 51%;
   }
   .date {
-    margin-bottom: 1rem;
-    position: relative;
+    position: fixed;
+    top: 2%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: start;
     gap: 2rem;
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+  }
+  .search {
+    margin-top: 3rem;
   }
   .lightbox {
     display: none;
@@ -869,9 +872,8 @@ select,
     align-items: center;
     margin-left: 0;
   }
-  .search,
-  .date {
-    width: 45%;
+  .search {
+    width: 40%;
   }
   .destination__header {
     margin-top: 2rem;

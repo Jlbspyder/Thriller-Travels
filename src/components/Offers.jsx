@@ -6,7 +6,7 @@ import LightBox from "./LightBox";
 const Offers = () => {
   const [selectedImg, setSelectedImg] = useState(null);
   return (
-    <section>
+    <section id="offer">
       <div className="destination__header">
         <div>
           <h3>Best Offers</h3>

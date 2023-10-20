@@ -18,7 +18,7 @@ const Destination = () => {
   };
 
   return (
-    <section>
+    <section id="destination">
       <div className="destination__header">
         <div>
           <h3>Trending destinations</h3>

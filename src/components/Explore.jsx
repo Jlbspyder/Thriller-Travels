@@ -5,7 +5,7 @@ import LightBox from "./LightBox";
 const Explore = () => {
   const [selectedImg, setSelectedImg] = useState(null);
   return (
-    <section>
+    <section id="explore">
       <div className="destination__header">
         <div>
           <h3>Explore France</h3>
