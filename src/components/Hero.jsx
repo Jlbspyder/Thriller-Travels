@@ -97,7 +97,7 @@ const Hero = ({ open }) => {
           </form>
         </div>
         <div className="date">
-          <div>
+          <div className="timestamp">
             {day}, {mo} {dat}, {year}
           </div>
           <div className="alert">

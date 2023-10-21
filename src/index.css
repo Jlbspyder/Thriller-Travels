@@ -680,19 +680,24 @@ select,
     border-radius: 0;
   }
   .notif {
-    top: -10%;
-    left: 51%;
+    top: 15%;
+    left: 53%;
   }
   .date {
     position: fixed;
-    top: 2%;
+    top: 0;
+    left: 0;
     width: 100%;
+    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: start;
     gap: 2rem;
     background: hsl(0 0% 100% / 0.1);
     backdrop-filter: blur(1rem);
+  }
+  .timestamp {
+    padding-left: 1.8rem;
   }
   .search {
     margin-top: 3rem;
