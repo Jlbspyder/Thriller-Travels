@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GrNotification } from "react-icons/gr";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { useGetUserInfo } from "../hooks/useGetUserInfo";
-import { signOut } from "firebase/auth";
-import { auth } from "../auth/firebase-config";
-import { useNavigate } from "react-router-dom";
 import { SlCalender } from "react-icons/sl";
 import { BsPerson } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -18,17 +14,6 @@ const Hero = ({ open }) => {
     checkIn: "",
     persons: "",
   });
-  const navigate = useNavigate();
-
-  const LogOut = async () => {
-    try {
-      await signOut(auth);
-      localStorage.clear();
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -75,7 +60,6 @@ const Hero = ({ open }) => {
   };
   setInterval(updateTime, 1000);
 
-  const { avatar } = useGetUserInfo();
   return (
     <main id="hero">
       <div className="bar"></div>

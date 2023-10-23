@@ -4,7 +4,9 @@ const Favorites = () => {
   return (
     <section id='fav'>
       <div className='container'>
-        FAVORITES
+      <div className="main-container">
+          <h3>FAVORITES</h3>
+      </div>
       </div>
     </section>
   )

@@ -7,6 +7,7 @@ import ExploreCity from "./pages/ExploreCity";
 import Ticket from "./pages/Ticket";
 import Favorites from "./pages/Favorites";
 import Setting from "./pages/Setting";
+import MobileHeader from "./components/MobileHeader";
 
 function App() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -23,7 +24,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" exact element={<Login />} />
-
           <Route
             path="/homepage"
             element={
@@ -41,6 +41,11 @@ function App() {
             path="/explore"
             element={
               <>
+                 <MobileHeader 
+                  openMenu={openMenu}
+                  close={handleClose}
+                  open={handleOpen}
+               />
                 <ExploreCity />
                 <SideBar openMenu={openMenu} close={handleClose} />
               </>
@@ -50,6 +55,11 @@ function App() {
             path="/ticket"
             element={
               <>
+                 <MobileHeader 
+                  openMenu={openMenu}
+                  close={handleClose}
+                  open={handleOpen}
+               />
                 <Ticket />
                 <SideBar openMenu={openMenu} close={handleClose} />
               </>
@@ -59,6 +69,11 @@ function App() {
             path="/favorites"
             element={
               <>
+               <MobileHeader 
+                  openMenu={openMenu}
+                  close={handleClose}
+                  open={handleOpen}
+               />
                 <Favorites />
                 <SideBar openMenu={openMenu} close={handleClose} />
               </>
@@ -68,6 +83,11 @@ function App() {
             path="/setting"
             element={
               <>
+               <MobileHeader 
+                  openMenu={openMenu}
+                  close={handleClose}
+                  open={handleOpen}
+               />
                 <Setting />
                 <SideBar openMenu={openMenu} close={handleClose} />
               </>

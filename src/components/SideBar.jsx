@@ -55,7 +55,7 @@ const SideBar = ({ openMenu, close }) => {
           <div className="explore-city" onClick={close}>
             <BiSolidCity  className={location.pathname === "/explore" ? "icon-live" : "icon"} />
             <p className={location.pathname === "/explore" ? "live" : ""}>
-              Explore City
+              Explore Cities
             </p>
           </div>
         </Link>
@@ -79,7 +79,7 @@ const SideBar = ({ openMenu, close }) => {
           <div className="setting">
             <TbSettings2 className={location.pathname === "/setting" ? "icon-live" : "icon"} />
             <p className={location.pathname === "/setting" ? "live" : ""}>
-              Setting
+              Settings
             </p>
           </div>
         </Link>
