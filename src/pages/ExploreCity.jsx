@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import { FaPassport } from "react-icons/fa";
 import { BsAirplaneFill } from "react-icons/bs";
-import { MdOutlineBedroomParent } from "react-icons/md";
+import { MdBedroomChild } from "react-icons/md";
 
 const ExploreCity = () => {
   return (
@@ -25,7 +25,7 @@ const ExploreCity = () => {
                     <h3>Flight</h3>
                   </div>
                   <div id="visa">
-                    <MdOutlineBedroomParent />
+                    <MdBedroomChild />
                     <h3>Stays</h3>
                   </div>
                 </div>
@@ -101,16 +101,16 @@ const ExploreCity = () => {
                 <button className="plan-btn apply">Apply to ....</button>
               </div>
               <div className="img-grid">
-                <div>
+                <div className="img-wrapper">
                   <img src="/images/norway.jpg" alt="NOR" className="content__img" />
                 </div>
-                <div>
+                <div className="img-wrapper">
                   <img src="/images/new-zealand.jpg" alt="NZ"  className="content__img" />
                 </div>
-                <div>
+                <div className="img-wrapper">
                   <img src="/images/united-kingdom.jpg" alt="UK"  className="content__img" />
                 </div>
-                <div>
+                <div className="img-wrapper">
                   <img src="/images/canada.jpg" alt="CA"  className="content__img" />
                 </div>
               </div>
