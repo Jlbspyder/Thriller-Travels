@@ -308,7 +308,7 @@ select,
   margin: auto;
   display: flex;
   flex-direction: column;
-  width: 1000px;
+  width: 95%;
   min-height: 100px;
 }
 .travel-plan__form {
@@ -335,7 +335,7 @@ select,
   border: none;
 }
 .travel-plan {
-  width: 1000px;
+  width: 100%;
 }
 .travel-plan__list {
   display: flex;
@@ -702,12 +702,10 @@ select,
   .container {
     margin: auto;
     max-width: 590px;
-    /* padding-inline: 1rem; */
   }
   .sidebar {
     position: fixed;
     inset: 0 0 0 0;
-    /* height: 100vh; */
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     background: hsl(0, 1%, 83%);
     z-index: 9999;
@@ -762,6 +760,7 @@ select,
 }
 .main-container {
   margin-top: 4rem;
+  width: 400px;
 }
   .mobile-avatar {
     display: block;
