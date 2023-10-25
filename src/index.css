@@ -958,7 +958,7 @@ footer h2, h1 {
     width: 100%;
     height: 60px;
     text-align: center;
-    border: 1px solid rgb(130, 126, 126);
+    border: 1px solid hsl(0, 1%, 83%);
   }
   .location-icon,
   .calender-icon,
@@ -1083,11 +1083,9 @@ footer h2, h1 {
     font-size: 1.5rem;
     width: 100%;
   }
-  .section-flex {
-    display: flex;
-    flex-direction: column-reverse;
+  /* .section-flex {
     gap: 1rem;
-  }
+  } */
   .section-content {
     width: 95%;
     margin-top: 1rem;
@@ -1105,12 +1103,11 @@ footer h2, h1 {
     margin: 2rem 0 0 1rem;
   }
   .form-control select {
-    padding: 1.3em;
     width: 100%;
-    height: 60px;
+    height: 55px;
     border-radius: 5px;
     text-align: left ;
-    border: 1px solid rgb(166, 162, 162);
+    border: 1px solid rgb(130, 126, 126);
   }
   .apply {
     margin: 1rem auto;
@@ -1122,8 +1119,27 @@ footer h2, h1 {
   .socials {
     justify-content: center;
   }
+  footer {
+    padding: 3rem;
+  }
   footer h1 {
     color: #000;
+  }
+  footer h2 {
+    font-size: 1.2rem;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1rem;
+  }
+  .footer__header {
+    width: 100%;
+  }
+  .footer div:nth-of-type(5) {
+    margin-right: 2rem;
   }
 }
 @media (min-width: 760px) and (max-width: 1000px) {
@@ -1290,5 +1306,22 @@ footer h2, h1 {
   }
   .destination-grid span, h4 {
     font-size: 0.7rem;
+  }
+  /* footer styles */
+  .footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1rem;
+  }
+  .footer__header {
+    width: 100%;
+  }
+  footer h1 {
+    text-align: center;
+  }
+  .socials {
+    justify-content: center;
   }
 }
