@@ -76,3 +76,42 @@ export const data = [
         rating: '5/5'
     },
 ]
+
+export const destination = [
+    {
+        title: "Toronto, Canada",
+        img: "/images/toronto.jpg"
+    },
+    {
+        title: "Auckland, New Zealand",
+        img: "/images/auckland.jpg"
+    },
+    {
+        title: "Oslo, Norway",
+        img: "/images/oslo.jpg"
+    },
+    {
+        title: "London, United Kingdom",
+        img: "images/london-uk.jpg"
+    },
+    {
+        title: "New York, United States",
+        img: "/images/new-york.jpg"
+    },
+    {
+        title: "Zurich, Switzerland",
+        img: "/images/zurich.jpg"
+    },
+    {
+        title: "Sydney, Australia",
+        img: "/images/sydney.jpg"
+    },
+    {
+        title: "Singapore, Singapore",
+        img: "/images/singapore.jpg"
+    },
+    {
+        title: "Berlin, Germany",
+        img: "/images/berlin.jpg"
+    }
+]

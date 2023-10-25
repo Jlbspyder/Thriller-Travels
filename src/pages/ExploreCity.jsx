@@ -1,8 +1,9 @@
 import React from "react";
-import Hero from "../components/Hero";
+import { destination } from "../data"
 import { FaPassport } from "react-icons/fa";
 import { BsAirplaneFill } from "react-icons/bs";
 import { MdBedroomChild } from "react-icons/md";
+import City from "../components/City";
 
 const ExploreCity = () => {
   return (
@@ -114,6 +115,17 @@ const ExploreCity = () => {
                   <img src="/images/canada.jpg" alt="CA"  className="content__img" />
                 </div>
               </div>
+            </div>
+          </section>
+          <section className="top">
+            <h2>Popular Destinations</h2>
+            <p>
+              Explore our popular destinations to find the best option for your next adventure!
+            </p>
+            <div className="destination-grid">
+              {destination.map((city, index) => (
+                <City key={index} city={city} />
+               ))}
             </div>
           </section>
         </div>

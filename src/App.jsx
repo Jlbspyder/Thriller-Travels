@@ -8,6 +8,7 @@ import Ticket from "./pages/Ticket";
 import Favorites from "./pages/Favorites";
 import Setting from "./pages/Setting";
 import MobileHeader from "./components/MobileHeader";
+import Footer from "./components/Footer";
 
 function App() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -33,6 +34,7 @@ function App() {
                   close={handleClose}
                   open={handleOpen}
                 />
+                <Footer />
                 <SideBar openMenu={openMenu} close={handleClose} />
               </>
             }
