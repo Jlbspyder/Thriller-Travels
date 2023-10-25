@@ -49,6 +49,7 @@ function App() {
                   open={handleOpen}
                />
                 <ExploreCity />
+                <Footer />
                 <SideBar openMenu={openMenu} close={handleClose} />
               </>
             }
