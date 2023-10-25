@@ -70,7 +70,7 @@ const Hero = ({ open }) => {
       <BsPerson className="person-icon" />
       <div className="header">
         <div className="search">
-          <form>
+          <form id="search">
             <BsSearch className="search-icon" />
             <input
               type="text"

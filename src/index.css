@@ -317,6 +317,7 @@ select,
   flex-direction: column;
   width: 95%;
   min-height: 100px;
+  background: rgb(130, 130, 250);
 }
 .travel-plan__form {
   display: flex;
@@ -331,6 +332,11 @@ select,
   color: #fff;
   font-weight: 500;
   cursor: pointer;
+}
+.plan-btn:hover {
+  background: transparent;
+  border: 1px solid #000;
+  animation: moveIn 350ms ease-in-out;
 }
 .apply {
   background: #fff;
@@ -357,7 +363,7 @@ select,
   width: 100px;
   min-height: 40px;
   gap: 0.5rem;
-  border-right: 1px solid  rgb(166, 162, 162);
+  border-right: 1px solid #000;
 }
 .top {
   margin: 1rem 0 0 2rem;
@@ -594,6 +600,10 @@ select,
   padding: 1rem;
   gap: 2rem;
 }
+
+.explore__header {
+  margin-top: 1rem;
+}
 .destination-grid {
   display: flex;
   flex-wrap: wrap;
@@ -624,6 +634,9 @@ select,
   width: 100px;
   height: 100px;
   border-radius: 10px;
+}
+#visa:nth-of-type(3) {
+  border: none;
 }
 /* Sidebar styles */
 .sidebar {
@@ -900,7 +913,8 @@ footer h2, h1 {
     padding-left: 1.8rem;
   }
   .search {
-    margin-top: 3rem;
+    margin: 3rem auto;
+    width: 93%;
   }
   .lightbox {
     display: none;
@@ -934,7 +948,7 @@ footer h2, h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    margin-bottom: 2rem;
     flex: 1;
   }
   select {
@@ -942,8 +956,9 @@ footer h2, h1 {
     border-radius: 10px;
     border: none;
     width: 100%;
+    height: 60px;
     text-align: center;
-    color: rgb(166, 162, 162);
+    border: 1px solid rgb(130, 126, 126);
   }
   .location-icon,
   .calender-icon,
@@ -960,26 +975,27 @@ footer h2, h1 {
   .destination,
   .day,
   .people {
-    width: 100%;
+    width: 95%;
     margin-bottom: 0.8rem;
     border-radius: 10px;
   }
   .button {
-    padding: 0.4em 1.5em;
+    padding: 1em 1em;
     border: none;
-    width: 410px;
+    width: 100%;
     border-radius: 10px;
     background: transparent;
+    margin: auto;
   }
   .btn {
-    padding: 0.5em 0.5em;
-    width: 100%;
-    height: 40px;
+    width: 105%;
+    height: 60px;
     background: rgb(107, 107, 149);
     border-radius: 10px;
     border: none;
     color: #fff;
-    font-size: 10px;
+    font-size: 1rem;
+    margin-left: -10px;
     text-transform: capitalize;
   }
   .destinations {
@@ -987,8 +1003,8 @@ footer h2, h1 {
     min-width: 300px;
     margin: auto;
   }
-  .destination__header {
-    margin-top: 2rem;
+  .destination__header h3 {
+    margin-top: 4rem;
     text-align: center;
   }
   .city {
@@ -1017,6 +1033,9 @@ footer h2, h1 {
     flex-direction: column;
     min-width: 300px;
   }
+  .explore__header {
+    margin-top: 3rem;
+  }
   /* Explore-cities styles */
   .plan form {
     width: 90%;
@@ -1032,7 +1051,6 @@ footer h2, h1 {
     margin-left: 0;
   }
   .top p {
-    width: 90%;
     text-align: center;
   }
   .top h2 {
@@ -1042,7 +1060,7 @@ footer h2, h1 {
     justify-content: start;
   }
   .plan-btn {
-    padding: 1em 1.5em;
+    padding: 1.5em 1.5em;
     width: 90%;
     margin: 2rem 0;
   }
@@ -1092,7 +1110,7 @@ footer h2, h1 {
     height: 60px;
     border-radius: 5px;
     text-align: left ;
-    border: none;
+    border: 1px solid rgb(166, 162, 162);
   }
   .apply {
     margin: 1rem auto;

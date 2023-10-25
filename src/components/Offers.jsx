@@ -7,7 +7,7 @@ const Offers = () => {
   const [selectedImg, setSelectedImg] = useState(null);
   return (
     <section id="offer">
-      <div className="destination__header">
+      <div className="section-flex">
         <div>
           <h3>Best Offers</h3>
         </div>

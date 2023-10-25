@@ -6,7 +6,7 @@ const Explore = () => {
   const [selectedImg, setSelectedImg] = useState(null);
   return (
     <section id="explore">
-      <div className="destination__header">
+      <div className="explore__header">
         <div>
           <h3>Explore France</h3>
         </div>
