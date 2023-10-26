@@ -375,6 +375,7 @@ select,
 .content h3 {
   font-size: 2.8rem;
   text-align: left;
+  animation: zoom 0.8s ease-in-out;
 }
 .section-flex {
   display: flex;
@@ -393,12 +394,18 @@ select,
 }
 .section-content p {
   color: #302e2e;
+  animation: zoom 0.8s ease-in-out;
 }
 .img-wrapper {
   position: relative;
 }
+.img-wrapper.travel {
+  margin-top: 3rem;
+  padding: 0 2rem;
+}
 .img-wrapper:hover {
   animation: moveIn 0.5s ease-in-out;
+  opacity: 80%;
 }
 .img-grid {
   width: 48%;
@@ -407,6 +414,11 @@ select,
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+}
+.img-grid.travel {
+  width: 100%;
+  gap: 0;
+  padding: 0;
 }
 .content__img {
   width: 100%;
@@ -423,10 +435,27 @@ select,
   left: 70px;
   text-align: center;
   font-size: 2rem;
-  color: #fff;
+  color: #e8e4e4;
+  cursor: pointer;
 }
 .country-name.direct {
   display: block;
+}
+.country-name.guide {
+  position: absolute;
+  display: block;
+  width: 50%;
+  top: 35%;
+  left: 30%;
+  font-size: 2rem;
+}
+.country-name.desc {
+  position: absolute;
+  display: block;
+  width: 50%;
+  top: 50%;
+  left: 30%;
+  font-size: 1rem;
 }
 
 /* Destination styles */
@@ -1137,6 +1166,25 @@ footer h2, h1 {
     width: 100%;
     left: 0;
   }
+  .country-name.guide {
+    position: absolute;
+    display: block;
+    width: 50%;
+    top: 35%;
+    left: 30%;
+    font-size: 1.5rem;
+  }
+  .country-name.desc {
+    position: absolute;
+    display: block;
+    width: 50%;
+    top: 50%;
+    left: 30%;
+    font-size: 1rem;
+  }
+  .img-grid.travel {
+    display: block;
+  }
   /* footer styles */
   .socials {
     display: none;
@@ -1361,5 +1409,11 @@ footer h2, h1 {
   }
   .socials {
    display: none;
+  }
+  .country-name.guide {
+    font-size: 1rem;
+  }
+  .country-name.desc {
+    font-size: 0.8rem;
   }
 }

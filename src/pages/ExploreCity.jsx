@@ -4,7 +4,7 @@ import { FaPassport } from "react-icons/fa";
 import { BsAirplaneFill } from "react-icons/bs";
 import { MdBedroomChild } from "react-icons/md";
 import City from "../components/City";
-import { countries } from "../data";
+import { countries, bookings } from "../data";
 
 const ExploreCity = () => {
   const [currentIndex, setCurrentIndex] = useState(null)
@@ -97,27 +97,15 @@ const ExploreCity = () => {
                     <h3>Get {country.title} Work Visa</h3>
                   </div>
                   <p>
-                    {country.info}
+                    {country.info1}
+                  </p>
+                  <p>
+                    {country.info2}
                   </p>
                   <button className="plan-btn apply">Apply to {country.title}</button>
                 </div>}
                 </>
               ))}
-              {/* <div className="section-content">
-                <div className="content">
-                  <h3>Get Norway Work Visa</h3>
-                </div>
-                <p>
-                Experience the blend of tradition and modernity in the United Kingdom. 
-                Whether you're drawn to London's bustling streets or the historic charm of 
-                Edinburgh, Thrillers Travels is your partner in visa application excellence. 
-                Let us simplify your path to the UK, so you can make your mark in this iconic 
-                destination.<br/><br/>Don't wait any longer to embark on your journey to Canada, Australia, 
-                Norway, or the United Kingdom! Let Thrillers Travels be your guide, turning your 
-                travel aspirations into unforgettable realities.
-                </p>
-                <button className="plan-btn apply">Apply to ....</button>
-              </div> */}
               <div className="img-grid">
                 {countries.map((country, index) => (
                   <div  key={index} className="img-wrapper">
@@ -137,6 +125,17 @@ const ExploreCity = () => {
               {destination.map((city, index) => (
                 <City key={index} city={city} />
                ))}
+            </div>
+          </section>
+          <section>
+            <div className="img-grid travel">
+                {bookings.map((booking, index) => (
+                  <div key={index} className="img-wrapper travel">
+                    <img src={booking.img} alt="pix" className="content__img" />
+                    <h2 className="country-name guide">{booking.title}</h2>
+                    <p className="country-name desc">{booking.info}</p>
+                  </div>
+                ))}
             </div>
           </section>
         </div>
