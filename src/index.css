@@ -751,7 +751,9 @@ footer h2, h1 {
   width: 25px;
   height: 25px;
 }
-
+.mobile-socials {
+  display: none;
+}
 
 @keyframes moveIn {
   0% {
@@ -1084,9 +1086,11 @@ footer h2, h1 {
     font-size: 1.5rem;
     width: 100%;
   }
-  /* .section-flex {
+  .section-flex {
+    display: flex;
+    flex-direction: column-reverse;
     gap: 1rem;
-  } */
+  }
   .section-content {
     width: 95%;
     margin-top: 1rem;
@@ -1118,7 +1122,13 @@ footer h2, h1 {
   }
   /* footer styles */
   .socials {
+    display: none;
+  }
+  .mobile-socials {
+    display: flex;
     justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
   }
   footer {
     padding: 3rem;

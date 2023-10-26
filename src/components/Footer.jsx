@@ -73,6 +73,28 @@ const Footer = () => {
                 </ul>
             </div>
           </div>
+          <ul className='mobile-socials'>
+                <li>
+                    <Link to="https://www.instagram.com/jlb_me/" target="_blank">
+                      <BsInstagram className="ig" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="https://www.twitter.com/jlbspyder/" target="_blank">
+                      <RiTwitterXFill className="x" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="https://www.facebook.com/" target="_blank">
+                      <BsFacebook className="fb" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="https://www.pinterest.com/" target="_blank">
+                      <BsLinkedin className="ind" />
+                    </Link>
+                  </li>
+                </ul>
     </footer>
   )
 }
