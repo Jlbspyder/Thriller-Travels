@@ -372,13 +372,9 @@ select,
   margin-top: 1rem;
   font-size: 1rem;
 }
-.content {
-  width: 80%;
-}
 .content h3 {
   font-size: 2.8rem;
   text-align: left;
-  width: 95%;
 }
 .section-flex {
   display: flex;
@@ -398,6 +394,9 @@ select,
 .section-content p {
   color: #302e2e;
 }
+.img-wrapper {
+  position: relative;
+}
 .img-wrapper:hover {
   animation: moveIn 0.5s ease-in-out;
 }
@@ -416,6 +415,20 @@ select,
   margin: auto;
   cursor: pointer;
 }
+.country-name {
+  position: absolute;
+  display: none;
+  width: 50%;
+  top: 35%;
+  left: 70px;
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+}
+.country-name.direct {
+  display: block;
+}
+
 /* Destination styles */
 .destination__header {
   margin-top: 3rem;
@@ -993,7 +1006,7 @@ footer h2, h1 {
     width: 105%;
     height: 60px;
     background: rgb(107, 107, 149);
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     color: #fff;
     font-size: 1rem;
@@ -1062,7 +1075,7 @@ footer h2, h1 {
     justify-content: start;
   }
   .plan-btn {
-    padding: 1.5em 1.5em;
+    padding: 1.6em 1.5em;
     width: 90%;
     margin: 2rem 0;
     border: none;    
@@ -1109,8 +1122,8 @@ footer h2, h1 {
   }
   .form-control select {
     width: 100%;
-    height: 55px;
-    border-radius: 5px;
+    height: 53px;
+    border-radius: 10px;
     text-align: left ;
     border: 1px solid rgb(130, 126, 126);
   }
@@ -1119,6 +1132,10 @@ footer h2, h1 {
   }
   .city-flex {
     width: 95%;
+  }
+  .country-name {
+    width: 100%;
+    left: 0;
   }
   /* footer styles */
   .socials {
@@ -1319,6 +1336,9 @@ footer h2, h1 {
   .destination-grid span, h4 {
     font-size: 0.7rem;
   }
+  .top h2 {
+    text-align: center;
+  }
   /* footer styles */
   .footer {
     display: flex;
@@ -1333,7 +1353,13 @@ footer h2, h1 {
   footer h1 {
     text-align: center;
   }
-  .socials {
+  .mobile-socials {
+    display: flex;
     justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+  .socials {
+   display: none;
   }
 }

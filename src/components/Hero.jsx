@@ -56,9 +56,11 @@ const Hero = ({ open }) => {
 
   const updateTime = () => {
     const currentDay = new Date();
+    const timeSet = setInterval(updateTime, 1000)
     setDate(currentDay);
+    return () => clearInterval(timeSet)
   };
-  setInterval(updateTime, 1000);
+  // setInterval(updateTime, 1000);
 
   return (
     <main id="hero">

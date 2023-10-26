@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { destination } from "../data"
 import { FaPassport } from "react-icons/fa";
 import { BsAirplaneFill } from "react-icons/bs";
 import { MdBedroomChild } from "react-icons/md";
 import City from "../components/City";
+import { countries } from "../data";
 
 const ExploreCity = () => {
+  const [currentIndex, setCurrentIndex] = useState(null)
+
+
   return (
     <section id="explore-city">
       <div className="container">
@@ -86,7 +90,20 @@ const ExploreCity = () => {
               to your destination.
             </p>
             <div className="section-flex">
-              <div className="section-content">
+              {countries.map((country, index) => (
+                <>
+                {index === currentIndex && <div key={index} className="section-content">
+                  <div className="content">
+                    <h3>Get {country.title} Work Visa</h3>
+                  </div>
+                  <p>
+                    {country.info}
+                  </p>
+                  <button className="plan-btn apply">Apply to {country.title}</button>
+                </div>}
+                </>
+              ))}
+              {/* <div className="section-content">
                 <div className="content">
                   <h3>Get Norway Work Visa</h3>
                 </div>
@@ -100,20 +117,14 @@ const ExploreCity = () => {
                 travel aspirations into unforgettable realities.
                 </p>
                 <button className="plan-btn apply">Apply to ....</button>
-              </div>
+              </div> */}
               <div className="img-grid">
-                <div className="img-wrapper">
-                  <img src="/images/norway.jpg" alt="NOR" className="content__img" />
-                </div>
-                <div className="img-wrapper">
-                  <img src="/images/new-zealand.jpg" alt="NZ"  className="content__img" />
-                </div>
-                <div className="img-wrapper">
-                  <img src="/images/united-kingdom.jpg" alt="UK"  className="content__img" />
-                </div>
-                <div className="img-wrapper">
-                  <img src="/images/canada.jpg" alt="CA"  className="content__img" />
-                </div>
+                {countries.map((country, index) => (
+                  <div  key={index} className="img-wrapper">
+                      <img src={country.img} alt="country" className="content__img" onMouseEnter ={() => setCurrentIndex(index)} />
+                      <h2 className={index === currentIndex ? "country-name direct" : "country-name"}>{country.title}</h2>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
