@@ -135,7 +135,7 @@ const Hero = ({ open }) => {
               onChange={handleChange}
             >
               <option hidden value="">
-                choose guest
+                Guests
               </option>
               <option>1</option>
               <option>2</option>

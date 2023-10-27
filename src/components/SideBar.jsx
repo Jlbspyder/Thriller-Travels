@@ -43,46 +43,66 @@ const SideBar = ({ openMenu, close }) => {
           <p className="profile-name">{name}</p>
         </div>
         <div className="sidebar-bottom">
-        <Link to='/'>
-          <div className="dashboard" onClick={close}>
-            <AiTwotoneDashboard  className={location.pathname === "/homepage" ? "icon-live" : "icon"} />
+          <Link to="/">
+            <div className="dashboard" onClick={close}>
+              <AiTwotoneDashboard
+                className={
+                  location.pathname === "/homepage" ? "icon-live" : "icon"
+                }
+              />
               <p className={location.pathname === "/homepage" ? "live" : ""}>
-                    Dashboard
+                Dashboard
               </p>
-          </div>
-        </Link> 
-        <Link to='/explore'>
-          <div className="explore-city" onClick={close}>
-            <BiSolidCity  className={location.pathname === "/explore" ? "icon-live" : "icon"} />
-            <p className={location.pathname === "/explore" ? "live" : ""}>
-              Explore Cities
-            </p>
-          </div>
-        </Link>
-        <Link to='/ticket'>
-          <div className="ticket" onClick={close}>
-            <BiEnvelope className={location.pathname === "/ticket" ? "icon-live" : "icon"} />
-            <p className={location.pathname === "/ticket" ? "live" : ""}>
-              Ticket
-            </p>
-          </div>
-        </Link>
-        <Link to='/favorites' onClick={close}>
-          <div className="fav">
-            <BsHeart className={location.pathname === "/favorites" ? "icon-live" : "icon"} />
-            <p className={location.pathname === "/favorites" ? "live" : ""}>
-              Favorites
-            </p>
-          </div>
-        </Link>
-        <Link to='/setting' onClick={close}>
-          <div className="setting">
-            <TbSettings2 className={location.pathname === "/setting" ? "icon-live" : "icon"} />
-            <p className={location.pathname === "/setting" ? "live" : ""}>
-              Settings
-            </p>
-          </div>
-        </Link>
+            </div>
+          </Link>
+          <Link to="/explore">
+            <div className="explore-city" onClick={close}>
+              <BiSolidCity
+                className={
+                  location.pathname === "/explore" ? "icon-live" : "icon"
+                }
+              />
+              <p className={location.pathname === "/explore" ? "live" : ""}>
+                Explore Cities
+              </p>
+            </div>
+          </Link>
+          <Link to="/ticket">
+            <div className="ticket" onClick={close}>
+              <BiEnvelope
+                className={
+                  location.pathname === "/ticket" ? "icon-live" : "icon"
+                }
+              />
+              <p className={location.pathname === "/ticket" ? "live" : ""}>
+                Ticket
+              </p>
+            </div>
+          </Link>
+          <Link to="/favorites" onClick={close}>
+            <div className="fav">
+              <BsHeart
+                className={
+                  location.pathname === "/favorites" ? "icon-live" : "icon"
+                }
+              />
+              <p className={location.pathname === "/favorites" ? "live" : ""}>
+                Favorites
+              </p>
+            </div>
+          </Link>
+          <Link to="/setting" onClick={close}>
+            <div className="setting">
+              <TbSettings2
+                className={
+                  location.pathname === "/setting" ? "icon-live" : "icon"
+                }
+              />
+              <p className={location.pathname === "/setting" ? "live" : ""}>
+                Settings
+              </p>
+            </div>
+          </Link>
         </div>
         <div className="log-out" onClick={LogOut}>
           <div className="angle-right">
