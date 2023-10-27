@@ -1178,6 +1178,9 @@ footer h2, h1 {
     margin: 2rem 0;
     border: none;    
   }
+  .join { 
+    background: #000;
+  }
   .img-grid {
     width: 100%;
   }
@@ -1474,6 +1477,9 @@ footer h2, h1 {
     width: 95%;
     margin-left: 0.7rem;
     border: none;
+  }
+  .join { 
+    background: #000;
   }
   .section-flex {
     display: flex;
