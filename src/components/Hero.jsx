@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GrNotification } from "react-icons/gr";
 import { HiOutlineLocationMarker } from "react-icons/hi";
@@ -9,6 +9,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Hero = ({ open }) => {
   const currentDay = new Date();
   const [date, setDate] = useState(currentDay);
+  const [country, setCountry] = useState([])
   const [formData, setFormData] = useState({
     destination: "",
     checkIn: "",
@@ -60,7 +61,16 @@ const Hero = ({ open }) => {
     setDate(currentDay);
     return () => clearInterval(timeSet)
   };
-  // setInterval(updateTime, 1000);
+
+  useEffect(() => {
+    const getCountry = async () => {
+      const res = await fetch ('https://countriesnow.space/api/v0.1/countries')
+      const getcon = await res.json()
+      setCountry(getcon.data)
+    }
+    getCountry()
+  }, [])
+
 
   return (
     <main id="hero">
@@ -68,7 +78,6 @@ const Hero = ({ open }) => {
       <div className="bar2"></div>
       {<GiHamburgerMenu className="hamburger" onClick={open} />}
       <HiOutlineLocationMarker className="location-icon" />
-      <SlCalender className="calender-icon" />
       <BsPerson className="person-icon" />
       <div className="header">
         <div className="search">
@@ -107,25 +116,13 @@ const Hero = ({ open }) => {
               <option hidden value="">
                 Where are you going?
               </option>
-              <option>Turkey</option>
-              <option>Paris</option>
-              <option>London</option>
-              <option>Montmartre</option>
-              <option>Athens</option>
+                {country.map((nation, index) =>(
+                  <option key={index}>{nation.country} - {nation.iso2}</option>
+                ))}
             </select>
           </div>
           <div className="day">
-            <select
-              name="check-in"
-              id="check-in"
-              value={formData.checkIn}
-              onChange={handleChange}
-            >
-              <option hidden value="">
-                Check-in Date
-              </option>
-              <option></option>
-            </select>
+            <input type="date" id="check-in"/>
           </div>
           <div className="people">
             <select

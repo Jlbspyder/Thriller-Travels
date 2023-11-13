@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { destination } from "../data";
 import { FaPassport } from "react-icons/fa";
 import { BsAirplaneFill } from "react-icons/bs";
@@ -10,6 +10,7 @@ const ExploreCity = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [country, setCountry] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +25,16 @@ const ExploreCity = () => {
       setError("");
     }, 3000);
   };
+
+  useEffect(() => {
+    const getCountry = async () => {
+      const res = await fetch ('https://countriesnow.space/api/v0.1/countries')
+      const getcon = await res.json()
+      setCountry(getcon.data)
+    }
+    getCountry()
+  }, [])
+
 
   return (
     <section id="explore-city">
@@ -42,7 +53,7 @@ const ExploreCity = () => {
                   </div>
                   <div id="visa">
                     <BsAirplaneFill />
-                    <h3>Flight</h3>
+                    <h3 className="visa">Flight</h3>
                   </div>
                   <div id="visa">
                     <MdBedroomChild />
@@ -55,26 +66,22 @@ const ExploreCity = () => {
                   Home Country
                   <select name="country" id="country">
                     <option hidden value="">
-                      Nigeria - NG
+                      Choose Country
                     </option>
-                    <option>AD - Andorra</option>
-                    <option>AE - United Arab Emirates</option>
-                    <option>AF - Afghanistan</option>
-                    <option>AG- Antigua and Barbuda</option>
-                    <option>AI - Anguilla</option>
+                    {country.map((nation, index) =>(
+                      <option key={index}>{nation.country} - {nation.iso2}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="form-control">
                   Destination
                   <select name="country" id="country">
                     <option hidden value="">
-                      Canada - CA
+                      Choose Destination
                     </option>
-                    <option>AD - Andorra</option>
-                    <option>AE - United Arab Emirates</option>
-                    <option>AF - Afghanistan</option>
-                    <option>AG- Antigua and Barbuda</option>
-                    <option>AI - Anguilla</option>
+                    {country.map((nation, index) =>(
+                      <option key={index}>{nation.country} - {nation.iso2}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="form-control">
