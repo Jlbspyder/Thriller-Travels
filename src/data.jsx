@@ -27,7 +27,7 @@ export const locations = [
     title: "Permanent Peace",
     location: "Sugar Apartments/Brazil",
     price: 79.0,
-    img: "images/7seasons.jpg",
+    img: "images/peace.jpg",
   },
 ];
 
