@@ -196,7 +196,7 @@ const ExploreCity = () => {
                   />
                   <small className="mobile-error">{error}</small>
                 </div>
-                <button className="btn" onClick={handleSubmit}>
+                <button className="btn join" onClick={handleSubmit}>
                   Subscribe
                 </button>
               </div>
