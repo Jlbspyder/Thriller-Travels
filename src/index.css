@@ -1127,6 +1127,9 @@ footer h2, h1 {
     margin-bottom: 0.8rem;
     border-radius: 10px;
   }
+  .day input {
+    height: 55px;
+  }
   .button {
     padding: 1em 1em;
     border: none;
@@ -1270,6 +1273,7 @@ footer h2, h1 {
     height: 53px;
     border-radius: 10px;
     margin-left: -10px;
+    padding-left: 15px;
     text-align: left ;
     border: 1px solid rgb(130, 126, 126);
   }
