@@ -187,6 +187,7 @@ const ExploreCity = () => {
                     <input 
                       type="date" 
                       name="date" 
+                      className="calendar"
                       id="destination"
                       value={formData.date}
                       />
@@ -232,7 +233,13 @@ const ExploreCity = () => {
                   </div>
                   <div className="form-control">
                     Check-in date - Check-out date
-                    <input type="date" id="destination" />
+                    <input 
+                        type="date" 
+                        id="destination" 
+                        name="date" 
+                        className="calendar"
+                        value={formData.date}
+                        />
                   </div>
                   <div className="form-control">
                     Number of Guests

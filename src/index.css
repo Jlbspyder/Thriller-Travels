@@ -1103,7 +1103,8 @@ footer h2, h1 {
     border: 1px solid hsl(0, 1%, 83%);
   }
   #check-in {
-    margin-left: 4rem;
+    width: 100%;
+    color: gray;
   }
   .location-icon,
   .calender-icon,
@@ -1276,6 +1277,9 @@ footer h2, h1 {
     padding-left: 15px;
     text-align: left ;
     border: 1px solid rgb(130, 126, 126);
+  }
+  .form-control .calendar {
+    width: 100%;
   }
   .apply {
     margin: 1rem auto;
