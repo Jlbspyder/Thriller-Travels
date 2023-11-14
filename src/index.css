@@ -212,6 +212,9 @@ select,
   font-size: 10px;
   text-transform: capitalize;
 }
+.join { 
+  background: #000;
+}
 .btn:hover {
   cursor: pointer;
   background: transparent;
@@ -232,6 +235,16 @@ select,
   top: 46%;
   right: 28%;
   z-index: 999;
+}
+.stay-location-icon {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+.stay-person-icon {
+  position: absolute;
+  top: 50%;
+  left: 5%;
 }
 .destination {
   width: 100%;
@@ -268,7 +281,7 @@ select,
   background: rgb(166, 162, 162);
   z-index: 999;
 }
-#hero, #ticket, #setting, #fav, #destination, #offer, #explore, #explore-city {
+#hero, #ticket, #setting, #fav, #destination, #offer, #explore, #explore-city, #visa-type {
   animation: zoom 0.5s ease-in-out;
 }
 .destination select:focus, .day select:focus, .people select:focus {
@@ -289,17 +302,30 @@ select,
 }
 /* Explore cities */
 .form-control {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: 2rem 0 0 1rem;
 }
-.form-control select {
-  padding: 0.7em;
+.viza {
+  justify-content: center;
+  margin: 2rem auto;
+}
+.form-control select, .form-control input {
+  padding: 0.7em 0.7em 0.7em 2rem;
+  /* padding-left: 3rem; */
   width: 100%;
   border-radius: 5px;
   text-align: left ;
   border: 1px solid rgb(166, 162, 162);
+}
+#visa-type {
+  height: 40px;
+  width: 98%;
+}
+.form-control input {
+  text-align: center;
 }
 .form-control select:focus {
   outline: 0;
@@ -317,6 +343,8 @@ select,
 }
 .travel-plan__form {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   margin-top: 1rem;
 }
@@ -328,6 +356,10 @@ select,
   color: #fff;
   font-weight: 500;
   cursor: pointer;
+}
+.viz {
+  height: 40px;
+  margin-bottom: -3px;
 }
 .plan-btn:hover {
   background: transparent;
@@ -637,7 +669,6 @@ select,
   border-radius: 50%;
   cursor: pointer;
 }
-
 .two {
   background: rgb(166, 162, 162);
   position: absolute;
@@ -648,7 +679,6 @@ select,
   border-radius: 50%;
   cursor: pointer;
 }
-
 .three {
   background: rgb(166, 162, 162);
   position: absolute;
@@ -1080,6 +1110,9 @@ footer h2, h1 {
   .person-icon {
     display: none;
   }
+  .stay-location-icon, .stay-person-icon {
+    display: none;
+  }
   .bar,
   .bar2 {
     display: none;
@@ -1180,6 +1213,9 @@ footer h2, h1 {
     margin: 2rem 0;
     border: none;    
   }
+  .viz {
+    width: 85%;
+  }
   .join { 
     background: #000;
   }
@@ -1229,10 +1265,11 @@ footer h2, h1 {
     width: 90%;
     margin: 2rem 0 0 1rem;
   }
-  .form-control select {
+  .form-control select, .form-control input {
     width: 100%;
     height: 53px;
     border-radius: 10px;
+    margin-left: -10px;
     text-align: left ;
     border: 1px solid rgb(130, 126, 126);
   }
@@ -1418,6 +1455,9 @@ footer h2, h1 {
   .person-icon {
     display: none;
   }
+  .stay-location-icon, .stay-person-icon {
+    display: none;
+  }
   .destinations {
     flex-direction: column;
     margin: auto;
@@ -1466,6 +1506,21 @@ footer h2, h1 {
   .travel-plan {
     width: 100%;
   }
+  .travel-plan__form {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+  .form-control {
+    font-size: 0.7rem;
+  }
+  .viza {
+    width: 100%;
+  }
+  .viz {
+    width: 40%;
+    border: 1px solid red;
+  }
   .travel-plan__list {
     text-align: center;
     gap: 0;
@@ -1477,11 +1532,17 @@ footer h2, h1 {
     justify-content: center;
     width: 100%;
   }
+  #visa-type {
+    width: 100%;
+  }
   .plan-btn {
     padding: 0.7em 1.5em;
     width: 95%;
     margin-left: 0.7rem;
     border: none;
+  }
+  .viz {
+    width: 40%;
   }
   .join { 
     background: #000;

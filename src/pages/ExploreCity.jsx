@@ -3,6 +3,8 @@ import { destination } from "../data";
 import { FaPassport } from "react-icons/fa";
 import { BsAirplaneFill } from "react-icons/bs";
 import { MdBedroomChild } from "react-icons/md";
+import { BsPerson } from "react-icons/bs";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 import City from "../components/City";
 import { countries, bookings } from "../data";
 
@@ -10,7 +12,27 @@ const ExploreCity = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
-  const [country, setCountry] = useState([])
+  const [country, setCountry] = useState([]);
+  const [visa, setVisa] = useState(true);
+  const [flight, setFlight] = useState(false);
+  const [stay, setStay] = useState(false);
+  const [formData, setFormData] = useState({
+    destination: "",
+    country: "",
+    persons: "",
+    visa: "",
+    date: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: value,
+      };
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,13 +50,27 @@ const ExploreCity = () => {
 
   useEffect(() => {
     const getCountry = async () => {
-      const res = await fetch ('https://countriesnow.space/api/v0.1/countries')
-      const getcon = await res.json()
-      setCountry(getcon.data)
-    }
-    getCountry()
-  }, [])
-
+      const res = await fetch("https://countriesnow.space/api/v0.1/countries");
+      const getcon = await res.json();
+      setCountry(getcon.data);
+    };
+    getCountry();
+  }, []);
+  const handleFlight = () => {
+    setFlight(true);
+    setVisa(false);
+    setStay(false);
+  };
+  const handleVisa = () => {
+    setFlight(false);
+    setVisa(true);
+    setStay(false);
+  };
+  const handleStay = () => {
+    setFlight(false);
+    setVisa(false);
+    setStay(true);
+  };
 
   return (
     <section id="explore-city">
@@ -44,65 +80,181 @@ const ExploreCity = () => {
             <h1>Revolutionize your travel experiences</h1>
           </div>
           <div className="plan">
-            <form>
-              <div className="travel-plan">
-                <div className="travel-plan__list">
-                  <div id="visa">
-                    <FaPassport />
-                    <h3>Visa</h3>
+            {visa && (
+              <form>
+                <div className="travel-plan">
+                  <div className="travel-plan__list">
+                    <div id="visa">
+                      <FaPassport />
+                      <h3 className="visa" onClick={handleVisa}>
+                        Visa
+                      </h3>
+                    </div>
+                    <div id="visa">
+                      <BsAirplaneFill />
+                      <h3 onClick={handleFlight}>Flight</h3>
+                    </div>
+                    <div id="visa">
+                      <MdBedroomChild />
+                      <h3 onClick={handleStay}>Stays</h3>
+                    </div>
                   </div>
-                  <div id="visa">
-                    <BsAirplaneFill />
-                    <h3 className="visa">Flight</h3>
+                </div>
+                <div className="travel-plan__form">
+                  <div className="form-control viza">
+                    Visa Type
+                    <select 
+                      name="visa" 
+                      id="visa-type"
+                      value={formData.visa}
+                      >
+                      <option hidden value="">
+                        Work
+                      </option>
+                      <option>Tourist Visa</option>
+                      <option>Business Visa</option>
+                      <option>Transit Visa</option>
+                      <option>Student Visa</option>
+                      <option>Work Visa</option>
+                      <option>Medical Visa</option>
+                      <option>Visa on Arrival</option>
+                      <option>Others</option>
+                    </select>
                   </div>
-                  <div id="visa">
-                    <MdBedroomChild />
-                    <h3>Stays</h3>
+                  <button className="plan-btn viz">Confirm</button>
+                </div>
+              </form>
+            )}
+            {flight && (
+              <form>
+                <div className="travel-plan">
+                  <div className="travel-plan__list">
+                    <div id="visa">
+                      <FaPassport />
+                      <h3 onClick={handleVisa}>Visa</h3>
+                    </div>
+                    <div id="visa">
+                      <BsAirplaneFill />
+                      <h3 className="visa" onClick={handleFlight}>
+                        Flight
+                      </h3>
+                    </div>
+                    <div id="visa">
+                      <MdBedroomChild />
+                      <h3 onClick={handleStay}>Stays</h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="travel-plan__form">
-                <div className="form-control">
-                  Home Country
-                  <select name="country" id="country">
-                    <option hidden value="">
-                      Choose Country
-                    </option>
-                    {country.map((nation, index) =>(
-                      <option key={index}>{nation.country} - {nation.iso2}</option>
-                    ))}
-                  </select>
+                <div className="travel-plan__form">
+                  <div className="form-control">
+                    Home Country
+                    <select 
+                     name="country" 
+                     id="destination"
+                     value={formData.country}
+                     onChange={handleChange}
+                    >
+                      <option hidden value="">
+                        Choose Country
+                      </option>
+                      {country.map((nation, index) => (
+                        <option key={index}>
+                          {nation.country} - {nation.iso2}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="form-control">
+                    Destination
+                    <select 
+                      name="destination" 
+                      id="destination"
+                      value={formData.destination}
+                      onChange={handleChange}
+                      >
+                      <option hidden value="">
+                        Choose Destination
+                      </option>
+                      {country.map((nation, index) => (
+                        <option key={index}>
+                          {nation.country} - {nation.iso2}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="form-control">
+                    Select Date
+                    <input 
+                      type="date" 
+                      name="date" 
+                      id="destination"
+                      value={formData.date}
+                      />
+                  </div>
                 </div>
-                <div className="form-control">
-                  Destination
-                  <select name="country" id="country">
-                    <option hidden value="">
-                      Choose Destination
-                    </option>
-                    {country.map((nation, index) =>(
-                      <option key={index}>{nation.country} - {nation.iso2}</option>
-                    ))}
-                  </select>
+                <button className="plan-btn">Search</button>
+              </form>
+            )}
+            {stay && (
+              <form>
+                <div className="travel-plan">
+                  <div className="travel-plan__list">
+                    <div id="visa">
+                      <FaPassport />
+                      <h3 onClick={handleVisa}>Visa</h3>
+                    </div>
+                    <div id="visa">
+                      <BsAirplaneFill />
+                      <h3 onClick={handleFlight}>Flight</h3>
+                    </div>
+                    <div id="visa">
+                      <MdBedroomChild />
+                      <h3 className="visa" onClick={handleStay}>
+                        Stays
+                      </h3>
+                    </div>
+                  </div>
                 </div>
-                <div className="form-control">
-                  Visa Type
-                  <select name="country" id="country">
-                    <option hidden value="">
-                      Work
-                    </option>
-                    <option>Tourist Visa</option>
-                    <option>Business Visa</option>
-                    <option>Transit Visa</option>
-                    <option>Student Visa</option>
-                    <option>Work Visa</option>
-                    <option>Medical Visa</option>
-                    <option>Visa on Arrival</option>
-                    <option>Others</option>
-                  </select>
+                <div className="travel-plan__form">
+                  <div className="form-control">
+                    Desrination
+                    <select name="country" id="destination">
+                      <option hidden value="">
+                        Where are you going?
+                      </option>
+                      {country.map((nation, index) => (
+                        <option key={index}>
+                          {nation.country} - {nation.iso2}
+                        </option>
+                      ))}
+                    </select>
+                    <HiOutlineLocationMarker className="stay-location-icon" />
+                  </div>
+                  <div className="form-control">
+                    Check-in date - Check-out date
+                    <input type="date" id="destination" />
+                  </div>
+                  <div className="form-control">
+                    Number of Guests
+                    <select
+                      name="persons"
+                      id="destination"
+                      value={formData.persons}
+                      onChange={handleChange}
+                    >
+                      <option hidden value="">
+                        No of Guests
+                      </option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                    <BsPerson className="stay-person-icon" />
+                  </div>
                 </div>
-              </div>
-              <button className="plan-btn">Get Started</button>
-            </form>
+                <button className="plan-btn">Search</button>
+              </form>
+            )}
           </div>
           <section className="top">
             <h2>Our top countries</h2>
