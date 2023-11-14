@@ -183,14 +183,20 @@ input:valid {
   flex: 1;
 }
 select,
-.check-in, #check-in {
+.check-in {
   padding: 1em 1em;
   border-radius: 10px;
   border: none;
   width: 55%;
   text-align: center;
   background: hsl(0, 0%, 98%);
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  color: rgb(166, 162, 162);
+}
+#check-in {
+  padding: 0.8em 3em;
+  margin-left: -1rem;
+  border: none;
+  background: transparent;
   color: rgb(166, 162, 162);
 }
 .button {
@@ -255,6 +261,7 @@ select,
 }
 .day {
   width: 70%;
+  height: 42px;
   background: hsl(0, 0%, 98%);
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
@@ -314,7 +321,6 @@ select,
 }
 .form-control select, .form-control input {
   padding: 0.7em 0.7em 0.7em 2rem;
-  /* padding-left: 3rem; */
   width: 100%;
   border-radius: 5px;
   text-align: left ;
@@ -326,6 +332,7 @@ select,
 }
 .form-control input {
   text-align: center;
+  color: rgb(166, 162, 162);
 }
 .form-control select:focus {
   outline: 0;
@@ -1103,7 +1110,9 @@ footer h2, h1 {
     border: 1px solid hsl(0, 1%, 83%);
   }
   #check-in {
-    width: 100%;
+    text-align: center;
+    padding-left: 8rem;
+    margin: 0;
     color: gray;
   }
   .location-icon,
@@ -1125,6 +1134,7 @@ footer h2, h1 {
   .day,
   .people {
     width: 95%;
+    height: 100%;
     margin-bottom: 0.8rem;
     border-radius: 10px;
   }
@@ -1403,7 +1413,6 @@ footer h2, h1 {
     width: 100%;
   }
   #destination,
-  #check-in,
   #persons {
     width: 100%;
   }
@@ -1521,6 +1530,9 @@ footer h2, h1 {
   }
   .form-control {
     font-size: 0.7rem;
+  }
+  .form-control select, .form-control input {
+    padding-left: 1rem;
   }
   .viza {
     width: 100%;

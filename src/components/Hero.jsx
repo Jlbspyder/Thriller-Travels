@@ -14,6 +14,7 @@ const Hero = ({ open }) => {
     destination: "",
     checkIn: "",
     persons: "",
+    date: ""
   });
 
   const handleChange = (e) => {
@@ -46,7 +47,7 @@ const Hero = ({ open }) => {
     "August",
     "September",
     "October",
-    "Novenber",
+    "November",
     "December",
   ];
 
@@ -122,7 +123,13 @@ const Hero = ({ open }) => {
             </select>
           </div>
           <div className="day">
-            <input type="date" id="check-in"/>
+            <input 
+                type="date" 
+                id="check-in"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                />
           </div>
           <div className="people">
             <select

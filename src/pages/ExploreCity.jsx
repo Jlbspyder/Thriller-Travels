@@ -190,6 +190,7 @@ const ExploreCity = () => {
                       className="calendar"
                       id="destination"
                       value={formData.date}
+                      onChange={handleChange}
                       />
                   </div>
                 </div>
@@ -239,6 +240,7 @@ const ExploreCity = () => {
                         name="date" 
                         className="calendar"
                         value={formData.date}
+                        onChange={handleChange}
                         />
                   </div>
                   <div className="form-control">
