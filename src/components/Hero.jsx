@@ -117,9 +117,11 @@ const Hero = ({ open }) => {
               <option hidden value="">
                 Where are you going?
               </option>
-                {country.map((nation, index) =>(
-                  <option key={index}>{nation.country} - {nation.iso2}</option>
-                ))}
+                  <option>Nigeria - NG</option>
+                  <option>Canada - CA</option>
+                  <option>New Zealand - NZ</option>
+                  <option>Unnited Kingdom - UK</option>
+                  <option>Norway - NW</option>
             </select>
           </div>
           <div className="day">
@@ -139,11 +141,11 @@ const Hero = ({ open }) => {
               onChange={handleChange}
             >
               <option hidden value="">
-                Guests
+                1 Adult
               </option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+              <option>Adults</option>
+              <option>Children</option>
+              <option>Rooms</option>
             </select>
           </div>
           <div className="button">
