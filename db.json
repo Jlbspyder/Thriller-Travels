@@ -1,8 +1,8 @@
 {
   "locations": [
     { 
-      "id": "7Seasons Apartments",
-      "title": "7Seasons Apartments",
+      "id": "1",
+      "name": "7Seasons Apartments",
       "location": "Westminster Borough, London, W9 1NP, United Kingdom",
       "price": 65.0,
       "img": "images/7seasons.jpg",
@@ -85,8 +85,8 @@
     ]
     },
     {
-      "id": "Along With The Villa",
-      "title": "Along With The Villa",
+      "id": "2",
+      "name": "Along With The Villa",
       "location": "1061 Budapest, Király utca 8., Hungary ",
       "price": 65.0,
       "img": "images/Along-villa.jpg",
@@ -172,8 +172,8 @@
   ]
     },
     {
-      "id": "Resort and Recreation",
-      "title": "Resort and Recreation",
+      "id": "3",
+      "name": "Resort and Recreation",
       "location": "M3 6GG, Salford, Manchester, United Kingdom ",
       "price": 65.0,
       "img": "images/resort.jpg",
@@ -260,8 +260,8 @@
   ]
     },
     {
-      "id": "Beautiful and Classy",
-      "title": "Beautiful and Classy",
+      "id": "4",
+      "name": "Beautiful and Classy",
       "location": "135 Rue du Faubourg du Temple, 11th arr., 75010 Paris, France ",
       "price": 65.0,
       "img": "images/beauty-classy.jpg",
@@ -347,8 +347,8 @@
   ]
     },
     {
-      "id": "Permanent Peace",
-      "title": "Permanent Peace",
+      "id": "5",
+      "name": "Permanent Peace",
       "location": "50 John Street, M5V 3W2 Toronto, Canada",
       "price": 79.0,
       "img": "images/peace.jpg",
