@@ -11,10 +11,10 @@
           "img": "images/7seasons1.jpg"
         },
         {
-          "img": "images/7seasons2.jpg"
+          "img": "images/7seasons3.jpg"
         },
         {
-          "img": "images/7seasons3.jpg"
+          "img": "images/7seasons7.jpg"
         }
       ],
       "tips": "Situated in the real heart of London, this property has an excellent location score of 9.4",
@@ -47,10 +47,13 @@
       ],
       "thumbnail": [
           {
-            "img": "images/7seasons3.jpg"
+            "img": "images/7seasons13.jpg"
           },
           {
             "img": "images/7seasons1.jpg"
+          },
+          {
+            "img": "images/7seasons12.jpg"
           },
           {
             "img": "images/7seasons2.jpg"
@@ -162,6 +165,9 @@
         }, 
         {
           "img": "images/Along-villa11.jpg"
+        }, 
+        {
+          "img": "images/Along-villa12.jpg"
         } 
   ]
     },
@@ -244,6 +250,9 @@
         },
         {
           "img": "images/resort10.jpg"
+        }, 
+        {
+          "img": "images/resort12.jpg"
         }, 
         {
           "img": "images/resort11.jpg"
@@ -330,6 +339,9 @@
           "img": "images/beauty-classy10.jpg"
         }, 
         {
+          "img": "images/beauty-classy12.jpg"
+        }, 
+        {
           "img": "images/beauty-classy11.jpg"
         } 
   ]
@@ -408,6 +420,9 @@
         },
         {
           "img": "images/peace10.jpg"
+        }, 
+        {
+          "img": "images/peace12.jpg"
         }, 
         {
           "img": "images/peace11.jpg"

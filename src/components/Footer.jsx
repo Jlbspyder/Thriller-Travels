@@ -73,7 +73,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <ul className="mobile-socials">
+      <ul className="container mobile-socials">
         <li>
           <Link to="https://www.instagram.com/jlb_me/" target="_blank">
             <BsInstagram className="ig" />

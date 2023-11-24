@@ -161,9 +161,8 @@ const img =  hotels.map((item, index) => (
                   close={handleClose}
                   open={handleOpen}
                />
-               <Hotel  view={view} setView={setView} topic={topic} setTopic={setTopic}  />
-               {view && <Carousel view={view} setView={setView} topic={topic} selected={selected} hotels={hotels} images={img} />}
-               <SideBar openMenu={openMenu} close={handleClose} view={view} setView={setView}/>
+               <Hotel />
+               <SideBar openMenu={openMenu} close={handleClose} />
               </>
             }
           />

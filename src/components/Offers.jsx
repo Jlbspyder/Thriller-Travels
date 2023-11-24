@@ -7,20 +7,18 @@ import Hotel from "./Hotel";
 
 const Offers = () => {
   const [selectedImg, setSelectedImg] = useState(null);
-  const  [hotels, setHotels] = useState([])
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [hotels, setHotels] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-      const fetchHotels = async () => {
-        const res = await fetch(`http://localhost:5000/locations/`)
-        const data = await res.json()
-        setHotels(data)
-      }
-    
-      fetchHotels()
-     }, [])
+    const fetchHotels = async () => {
+      const res = await fetch(`http://localhost:5000/locations/`);
+      const data = await res.json();
+      setHotels(data);
+    };
 
-    
+    fetchHotels();
+  }, []);
 
   return (
     <section id="offer">
@@ -32,7 +30,7 @@ const Offers = () => {
       </div>
       <div className="rooms">
         {hotels.map((item, index) => (
-          <Hotels key={index} {...item} />
+          <Hotels key={index} {...item} index={index} />
         ))}
       </div>
       {selectedImg && (

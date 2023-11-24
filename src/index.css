@@ -1768,10 +1768,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 0.8rem;
-    margin-top: 2rem;
-  }
-  footer {
-    padding: 3rem;
+    background: rgb(130, 130, 250);
   }
   footer h1 {
     color: #000;
@@ -1928,11 +1925,6 @@ h1 {
   .form-control {
     width: 90%;
   }
-  /* .gallery-wrapper {
-    gap: 5px;
-    width: 100%;
-    height: 350px;
-  } */
   .hotel-search {
     padding: 010px;
     width: 100%;
@@ -1970,18 +1962,18 @@ h1 {
   }
   .info-flex {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 122px);
     gap: 10px;
   }
   .spec {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 102px;
+    width: 120px;
     height: 50px;
     font-size: 10px;
     gap: 5px;
-    border: 1px solid gainsboro;
+    border: 1px solid orange;
   }
    /* Carousel styles */
 .carousel {
@@ -2142,7 +2134,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 0.8rem;
-    margin-top: 2rem;
+    background: rgb(130, 130, 250);
   }
   .socials {
     display: none;
