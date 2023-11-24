@@ -12,7 +12,6 @@ const Hero = ({ open }) => {
   const [country, setCountry] = useState([])
   const [formData, setFormData] = useState({
     destination: "",
-    checkIn: "",
     persons: "",
     date: ""
   });
@@ -119,6 +118,7 @@ const Hero = ({ open }) => {
               </option>
                   <option>Nigeria - NG</option>
                   <option>Canada - CA</option>
+                  <option>United States of America - US</option>
                   <option>New Zealand - NZ</option>
                   <option>Unnited Kingdom - UK</option>
                   <option>Norway - NW</option>

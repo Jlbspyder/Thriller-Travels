@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { locations } from "../data";
 import { BsHeart } from "react-icons/bs";
 import LightBox from "./LightBox";
+import Hotels from "./Hotels";
+import Hotel from "./Hotel";
 
 const Offers = () => {
   const [selectedImg, setSelectedImg] = useState(null);
+  const  [hotels, setHotels] = useState([])
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+      const fetchHotels = async () => {
+        const res = await fetch(`http://localhost:5000/locations/`)
+        const data = await res.json()
+        setHotels(data)
+      }
+    
+      fetchHotels()
+     }, [])
+
+    
+
   return (
     <section id="offer">
       <div className="section-flex">
@@ -14,21 +31,8 @@ const Offers = () => {
         <div className="arrows">View All</div>
       </div>
       <div className="rooms">
-        {locations.map((item, index) => (
-          <div key={index} className="rooms__info" onClick={() => setSelectedImg(item.img)}>
-            <img src={item.img} alt="room" className="room" />
-            <h5>{item.title}</h5>
-            <div className="place">
-              <p>{item.location}</p>
-              <div className="heart-wrapper">
-                <BsHeart className="heart" />
-              </div>
-            </div>
-            <h5>
-              ${item.price}
-              <span>/night</span>
-            </h5>
-          </div>
+        {hotels.map((item, index) => (
+          <Hotels key={index} {...item} />
         ))}
       </div>
       {selectedImg && (

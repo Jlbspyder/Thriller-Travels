@@ -9,7 +9,7 @@ import { BsLinkedin } from "react-icons/bs";
 const Footer = () => {
   return (
     <footer>
-      <div className="section-flex footer">
+      <div className="container section-flex footer">
         <div className="footer__header">
           <h1>MimaBooking</h1>
           <ul className="socials">

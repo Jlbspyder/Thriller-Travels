@@ -1,0 +1,418 @@
+{
+  "locations": [
+    { 
+      "id": "7Seasons Apartments",
+      "title": "7Seasons Apartments",
+      "location": "Westminster Borough, London, W9 1NP, United Kingdom",
+      "price": 65.0,
+      "img": "images/7seasons.jpg",
+      "images": [
+        {
+          "img": "images/7seasons1.jpg"
+        },
+        {
+          "img": "images/7seasons2.jpg"
+        },
+        {
+          "img": "images/7seasons3.jpg"
+        }
+      ],
+      "tips": "Situated in the real heart of London, this property has an excellent location score of 9.4",
+      "parking": "Parking available on-site",
+      "breakfast": "Gluten-free, Buffet, Breakfast to go",
+      "private": "Private parking",
+      "WiFi": "Free WiFi",
+      "smoking": "Non-smoking rooms",
+      "gym": "Fitness center",
+      "frontdesk": "24-hour front desk",
+      "elevator": "Lift",
+      "food": "Buffet breakfast",
+      "heater": "Heating",
+      "accommodation": "Apartments",
+      "kitchen": "Kitchen",
+      "laundry": "Washing machine",
+      "bath": "Bath",
+      "cooling": "Air conditioning",
+      "housekeeping": "Daily housekeeping",
+      "info": [
+        {
+          "first": "Featuring a 24-hour reception, the 7Seasons Apartments offers you spacious 1- to 3-bedroom apartments in the heart of London, only 100 metres from Deak Ferenc tér, which is a major public transport hub. Wireless internet access is available in all apartments free of charge. Daily cleaning and shuttle service can be requested at a surcharge in advance."
+        },
+        {
+          "second": "All apartments feature a kitchen to prepare your own meals, but you can also find lots of cafés, restaurants and a 24-hour supermarket in the immediate vicinity of 7Seasons Apartments."
+        },
+        {
+          "third": "St. Stephen's Basilica, the Great Synagogue, the State Opera House and the Hungarian Parliament are easily reachable on foot. Couples particularly like the location — they rated it 9.7 for a two-person trip."
+        }
+      ],
+      "thumbnail": [
+          {
+            "img": "images/7seasons3.jpg"
+          },
+          {
+            "img": "images/7seasons1.jpg"
+          },
+          {
+            "img": "images/7seasons2.jpg"
+          },
+          {
+            "img": "images/7seasons4.jpg"
+          },
+          {
+            "img": "images/7seasons5.jpg"
+          },
+          {
+            "img": "images/7seasons6.jpg"
+          },
+          {
+            "img": "images/7seasons7.jpg"
+          },
+          {
+            "img": "images/7seasons8.jpg"
+          },
+          {
+            "img": "images/7seasons9.jpg"
+          },
+          {
+            "img": "images/7seasons10.jpg"
+          }, 
+          {
+            "img": "images/7seasons11.jpg"
+          } 
+    ]
+    },
+    {
+      "id": "Along With The Villa",
+      "title": "Along With The Villa",
+      "location": "1061 Budapest, Király utca 8., Hungary ",
+      "price": 65.0,
+      "img": "images/Along-villa.jpg",
+      "images": [
+        {
+          "img": "images/Along-villa1.jpg"
+        },
+        {
+          "img": "images/Along-villa2.jpg"
+        },
+        {
+          "img": "images/Along-villa3.jpg"
+        }
+      ],
+      "tips": "Situated in the real heart of Budapest, this property has an excellent location score of 9.7",
+      "parking": "Parking available on-site",
+      "breakfast": "Gluten-free, Buffet, Breakfast to go",
+      "private": "Private parking",
+      "WiFi": "Free WiFi",
+      "smoking": "Non-smoking rooms",
+      "gym": "Fitness center",
+      "frontdesk": "24-hour front desk",
+      "elevator": "Lift",
+      "heater": "Heating",
+      "family": "Family rooms",
+      "shuttle": "Airport shuttle",
+      "terrace": "Terrace",
+      "food": "Good breakfast",
+      "accommodation": "Apartments",
+      "kitchen": "Kitchen",
+      "laundry": "Washing machine",
+      "bath": "Bath",
+      "cooling": "Air conditioning",
+      "room": "Non-smoking rooms",
+      "info": [
+        {
+          "first": "Astonishing apartment in the heart of Budapest in Budapest provides accommodation with free WiFi, 600 metres from Hungarian National Museum, 700 metres from Dohany Street Synagogue and 1.5 km from Hungarian State Opera. The property is located 3.1 km from Buda Castle, 3.8 km from Chain Bridge and 1.7 km from Gellért Hill. The property is 1.3 km from Blaha Lujza Square, and within 1 km of the city centre."
+        },
+        {
+          "second": "The apartment is composed of 1 bedroom, a fully equipped kitchen, and 1 bathroom. The accommodation is non-smoking."
+        },
+        {
+          "third": "Popular points of interest near the apartment include St. Stephen's Basilica, Budapest History Museum and Citadella. The nearest airport is Budapest Ferenc Liszt International Airport, 13 km from Astonishing apartment in the heart of Budapest."
+        }
+      ],
+      "thumbnail": [
+        {
+          "img": "images/Along-villa2.jpg"
+        },
+        {
+          "img": "images/Along-villa3.jpg"
+        },
+        {
+          "img": "images/Along-villa1.jpg"
+        },
+        {
+          "img": "images/Along-villa4.jpg"
+        },
+        {
+          "img": "images/Along-villa5.jpg"
+        },
+        {
+          "img": "images/Along-villa6.jpg"
+        },
+        {
+          "img": "images/Along-villa7.jpg"
+        },
+        {
+          "img": "images/Along-villa8.jpg"
+        },
+        {
+          "img": "images/Along-villa9.jpg"
+        },
+        {
+          "img": "images/Along-villa10.jpg"
+        }, 
+        {
+          "img": "images/Along-villa11.jpg"
+        } 
+  ]
+    },
+    {
+      "id": "Resort and Recreation",
+      "title": "Resort and Recreation",
+      "location": "M3 6GG, Salford, Manchester, United Kingdom ",
+      "price": 65.0,
+      "img": "images/resort.jpg",
+      "images": [
+        {
+          "img": "images/resort1.jpg"
+        },
+        {
+          "img": "images/resort2.jpg"
+        },
+        {
+          "img": "images/resort3.jpg"
+        }
+      ],
+      "tips": "Top location: Highly rated by recent guests (9.5)",
+      "parking": "Free parking available on-site",
+      "breakfast": "Continental, Full English/Irish, Vegetarian, Vegan, Gluten-free, Kosher",
+      "bed": "Want a great night's sleep? This property was highly rated for its very comfy beds.",
+      "private": "Private parking",
+      "WiFi": "Free WiFi",
+      "smoking": "Non-smoking rooms",
+      "gym": "Fitness center",
+      "frontdesk": "24-hour front desk",
+      "elevator": "Lift",
+      "heater": "Heating",
+      "shuttle": "Airport shuttle",
+      "accommodation": "Entire Apartment",
+      "kitchen": "Kitchen",
+      "laundry": "Washing machine",
+      "bath": "Bath",
+      "cooling": "Air conditioning",
+      "size": "30sqm size",
+      "view": "City view",
+      "privacy": "Private bathroom",
+      "room": "Non-smoking rooms",
+      "info": [
+        {
+          "first": "Right in the centre of Salford, set within a short distance of House of Terror and Boxon State Opera, Classic luxury apartment near the Opera House and Andrassy offers free WiFi, air conditioning and household amenities such as a microwave and coffee machine. With city views, this accommodation offers a balcony. The property is non-smoking and is situated 1.2 km from Blaha Lujza Square. "
+        },
+        {
+          "second": "This apartment has 2 bedrooms, a kitchen with a dishwasher and an oven, a flat-screen TV, a seating area and 2 bathrooms fitted with a bath. The unit at the property features a shower and a dressing room. For added privacy, the accommodation features a private entrance."
+        },
+        {
+          "third": "Popular points of interest near the apartment include Dohany Street Synagogue, Heroes' Square and St. Stephen's Basilica. The nearest airport is Budapest Ferenc Liszt International Airport, 14 km from Classic luxury apartment near the Opera House and Andrassy."
+        }
+      ],
+      "thumbnail": [
+        {
+          "img": "images/resort1.jpg"
+        },
+        {
+          "img": "images/resort3.jpg"
+        },
+        {
+          "img": "images/resort2.jpg"
+        },
+        {
+          "img": "images/resort4.jpg"
+        },
+        {
+          "img": "images/resort5.jpg"
+        },
+        {
+          "img": "images/resort6.jpg"
+        },
+        {
+          "img": "images/resort7.jpg"
+        },
+        {
+          "img": "images/resort8.jpg"
+        },
+        {
+          "img": "images/resort9.jpg"
+        },
+        {
+          "img": "images/resort10.jpg"
+        }, 
+        {
+          "img": "images/resort11.jpg"
+        } 
+  ]
+    },
+    {
+      "id": "Beautiful and Classy",
+      "title": "Beautiful and Classy",
+      "location": "135 Rue du Faubourg du Temple, 11th arr., 75010 Paris, France ",
+      "price": 65.0,
+      "img": "images/beauty-classy.jpg",
+      "images": [
+        {
+          "img": "images/beauty-classy1.jpg"
+        },
+        {
+          "img": "images/beauty-classy2.jpg"
+        },
+        {
+          "img": "images/beauty-classy3.jpg"
+        }
+      ],
+      "tips": "Top location: Highly rated by recent guests (9.5)",
+      "parking": "Free parking available on-site",
+      "breakfast": "Continental, Full English/Irish, Vegetarian, Vegan, Gluten-free, Kosher",
+      "bed": "Want a great night's sleep? This property was highly rated for its very comfy beds.",
+      "private": "Private parking",
+      "WiFi": "Free WiFi",
+      "smoking": "Non-smoking rooms",
+      "gym": "",
+      "frontdesk": "24-hour front desk",
+      "elevator": "Lift",
+      "accommodation": "Apartments",
+      "kitchen": "Kitchen",
+      "laundry": "Washing machine",
+      "bath": "Bath",
+      "cooling": "Air conditioning",
+      "size": "30sqm size",
+      "view": "City view",
+      "privacy": "Private bathroom",
+      "room": "Non-smoking rooms",
+      "pets": "Pets allowed",
+      "info": [
+        {
+          "first": "Situated in Paris, 2.7 km from Gare du Nord and 1.8 km from Gare de l'Est, Appartement avec vue panoramique offers air conditioning. The property features city views and is 3.7 km from Opéra Bastille and 3.8 km from Notre Dame Cathedral. Free WiFi is available throughout the property and Pompidou Centre is 2.7 km away."
+        },
+        {
+          "second": "The apartment has 1 bedroom, a flat-screen TV with streaming services, a fully equipped kitchen with an oven and a microwave, a washing machine, and 1 bathroom with a walk-in shower. Towels and bed linen are available in the apartment. This apartment is non-smoking and soundproof."
+        },
+        {
+          "third": "La Cigale Concert Hall is 3.9 km from the apartment, while Pigalle Metro Station is 4 km from the property. The nearest airport is Paris - Charles de Gaulle Airport, 18 km from Appartement avec vue panoramique."
+        }
+      ],
+      "thumbnail": [
+        {
+          "img": "images/beauty-classy1.jpg"
+        },
+        {
+          "img": "images/beauty-classy3.jpg"
+        },
+        {
+          "img": "images/beauty-classy2.jpg"
+        },
+        {
+          "img": "images/beauty-classy4.jpg"
+        },
+        {
+          "img": "images/beauty-classy5.jpg"
+        },
+        {
+          "img": "images/beauty-classy6.jpg"
+        },
+        {
+          "img": "images/beauty-classy7.jpg"
+        },
+        {
+          "img": "images/beauty-classy8.jpg"
+        },
+        {
+          "img": "images/beauty-classy9.jpg"
+        },
+        {
+          "img": "images/beauty-classy10.jpg"
+        }, 
+        {
+          "img": "images/beauty-classy11.jpg"
+        } 
+  ]
+    },
+    {
+      "id": "Permanent Peace",
+      "title": "Permanent Peace",
+      "location": "50 John Street, M5V 3W2 Toronto, Canada",
+      "price": 79.0,
+      "img": "images/peace.jpg",
+      "images": [
+        {
+          "img": "images/peace1.jpg"
+        },
+        {
+          "img": "images/peace2.jpg"
+        },
+        {
+          "img": "images/peace3.jpg"
+        }
+      ],
+      "tips": "Situated in the real heart of Toronto, this property has an excellent location score of 9.4",
+      "parking": "Private parking available on-site",
+      "heater": "Heating",
+      "terrace": "Terrace",
+      "private": "Public parking available",
+      "food": "Buffet breakfast and lunch",
+      "accommodation": "Entire Apartment",
+      "kitchen": "Kitchen",
+      "laundry": "Washing machine",
+      "bath": "Bath",
+      "cooling": "Air conditioning",
+      "size": "105sqm size",
+      "view": "City view",
+      "privacy": "Private bathroom",
+      "pets": "Pets allowed",
+      "balcony": "Balcony",
+      "info": [
+        {
+          "first": "Ideally set in Toronto, The Rosemont Residences is a sustainable apartment, which features air-conditioned rooms with free WiFi and private parking. The property features garden and city views, and is 2.3 km from Sugar Beach. The apartment has parking on-site, a fitness room and a 24-hour front desk."
+        },
+        {
+          "second": "Featuring a fully equipped kitchen with a dishwasher and an oven, each unit also comes with a cable flat-screen TV, ironing facilities, desk and a seating area with a sofa. A microwave, a toaster and fridge are also offered, as well as a coffee machine and a kettle. All units have a private bathroom, a hair dryer and bed linen."
+        },
+        {
+          "third": "Guests are welcome to wind down in the in-house lounge, while a minimarket is also available. Popular points of interest near the apartment include Toronto Symphony Orchestra, Rogers Centre and Four Seasons Centre for the Performing Arts. The nearest airport is Billy Bishop Toronto City Airport, 2 km from The Rosemont Residences."
+        }
+      ],
+      "thumbnail": [
+        {
+          "img": "images/peace1.jpg"
+        },
+        {
+          "img": "images/peace3.jpg"
+        },
+        {
+          "img": "images/peace2.jpg"
+        },
+        {
+          "img": "images/peace4.jpg"
+        },
+        {
+          "img": "images/peace5.jpg"
+        },
+        {
+          "img": "images/peace6.jpg"
+        },
+        {
+          "img": "images/peace7.jpg"
+        },
+        {
+          "img": "images/peace8.jpg"
+        },
+        {
+          "img": "images/peace9.jpg"
+        },
+        {
+          "img": "images/peace10.jpg"
+        }, 
+        {
+          "img": "images/peace11.jpg"
+        } 
+  ]
+    }
+  ]
+}

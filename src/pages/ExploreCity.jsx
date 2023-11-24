@@ -178,6 +178,7 @@ const ExploreCity = () => {
                       </option>
                       <option>Nigeria - NG</option>
                       <option>Canada - CA</option>
+                      <option>United States of America - US</option>
                       <option>New Zealand - NZ</option>
                       <option>Unnited Kingdom - UK</option>
                       <option>Norway - NW</option>
@@ -228,6 +229,7 @@ const ExploreCity = () => {
                       </option>
                       <option>Nigeria - NG</option>
                       <option>Canada - CA</option>
+                      <option>United States of America - US</option>
                       <option>New Zealand - NZ</option>
                       <option>Unnited Kingdom - UK</option>
                       <option>Norway - NW</option>

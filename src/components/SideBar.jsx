@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
 import { IoMdClose } from "react-icons/io";
 
-const SideBar = ({ openMenu, close }) => {
+const SideBar = ({ openMenu, close, view, setView }) => {
   const { name, avatar } = useGetUserInfo();
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,6 +26,9 @@ const SideBar = ({ openMenu, close }) => {
       console.error(error);
     }
   };
+  const closeView = () => {
+    setView(false)
+  }
   return (
     <aside>
       <div className={openMenu ? "sidebar mobile" : "sidebar"}>
@@ -50,7 +53,7 @@ const SideBar = ({ openMenu, close }) => {
                   location.pathname === "/homepage" ? "icon-live" : "icon"
                 }
               />
-              <p className={location.pathname === "/homepage" ? "live" : ""}>
+              <p className={location.pathname === "/homepage" ? "live" : ""} onClick={closeView}>
                 Dashboard
               </p>
             </div>
