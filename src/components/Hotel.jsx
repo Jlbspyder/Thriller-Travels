@@ -208,6 +208,8 @@ const Hotel = () => {
           </div>
           {selected && (
             <div className="img-gallery" onClick={handleView}>
+              {selected && <h1 className="mobile hotel-name">{selected.name}</h1>}
+              {selected && <p className="mobile hotel-location">{selected.location}</p>}
               <div className="gallery-wrapper">
                 {Object.entries(selected.images).map(([_, image], index) => (
                   <img
