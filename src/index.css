@@ -1405,9 +1405,11 @@ h1 {
     height: 100%;
     margin-bottom: 0.8rem;
     border-radius: 10px;
+    border: 1px solid red;
   }
-  .day input {
+  .day .check-in {
     height: 55px;
+    width: 100%;
   }
   .button {
     padding: 1em 1em;
@@ -1482,6 +1484,9 @@ h1 {
     text-align: left;
     margin-left: -15px;
   }
+  .form-control .check-in {
+    width: 100%;
+  }
   .hotel {
     margin-top: 4rem;
   }
@@ -1527,9 +1532,20 @@ h1 {
     cursor: pointer;
   }
   .hotel-img {
-    height: 50%;
+    /* height: 50%; */
     width: 340px;
     cursor: pointer;
+  }
+  .hotel-img-grid {
+    margin-top: -50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    gap: 5px;
+    cursor: pointer;
+  }
+  .thumbnail {
+    width: 100%;
   }
    .hotel-img:nth-of-type(3){
     margin-top: -100px;
@@ -1540,7 +1556,7 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     border: none;
-    padding-block: 20px;
+    padding: 10px;
   }
   .spec {
     padding-left: 10px;
@@ -1561,17 +1577,18 @@ h1 {
     width: 100%;
   }
   .des-btn-wrapper {
-    width: 100%;
+    width: 90%;
     padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 0;
+    margin: auto;
+    border-radius: 10px;
   }
   /* Carousel styles */
 .carousel {
   position: fixed;
-  inset: 64px 0 0 0;
+  inset: 0 0 0 0;
   background: #fff;
   overflow: auto;
+  z-index: 9999;
 }
 .carousel h2 {
   text-align: center;

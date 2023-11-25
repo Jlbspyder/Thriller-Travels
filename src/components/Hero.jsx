@@ -129,6 +129,7 @@ const Hero = ({ open }) => {
                 type="date" 
                 id="check-in"
                 name="date"
+                className="check-in"
                 value={formData.date}
                 onChange={handleChange}
                 />

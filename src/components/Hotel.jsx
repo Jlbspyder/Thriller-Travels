@@ -106,7 +106,7 @@ const Hotel = () => {
       fetchHotels();
     }
   };
-  console.log(hotel)
+  
 
   const noHotel = hotels.status || hotels.message;
 
@@ -153,21 +153,23 @@ const Hotel = () => {
               )}
             </form>
             <div className="form-control">
-              <label>Check-in date</label>
+              <label htmlFor="date">Check-in date</label>
               <input
                 type="date"
                 placeholder="Check-in date"
                 name="checkIn"
+                className="check-in"
                 value={formData.checkIn}
                 onChange={handleChange}
               />
             </div>
             <div className="form-control">
-              <label>Check-out date</label>
+              <label htmlFor="date" >Check-out date</label>
               <input
                 type="date"
                 placeholder="Check-out date"
                 name="checkOut"
+                className="check-out"
                 value={formData.checkOut}
                 onChange={handleChange}
               />
