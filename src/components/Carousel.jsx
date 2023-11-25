@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-const Carousel = ({ setView, address, gallery, title, close }) => {
+const Carousel = ({ address, gallery, name, close }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevious = () => {
@@ -14,7 +14,7 @@ const Carousel = ({ setView, address, gallery, title, close }) => {
   return (
     <div className="container carousel">
       <div className="carousel-header">
-        <h2>{title}</h2>
+        <h2>{name}</h2>
         <p className="hotel-location">{address}</p>
         <AiOutlineClose className="close" onClick={close} />
       </div>

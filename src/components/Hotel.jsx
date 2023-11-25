@@ -51,7 +51,7 @@ const Hotel = () => {
   };
 
   const fetchHotels = async () => {
-    const res = await fetch(`http://localhost:5000/locations/`);
+    const res = await fetch(`https://hotel-api-hpic.onrender.com/locations`);
     const data = await res.json();
     setHotels(data);
     if (data.status === 404) {
@@ -69,10 +69,10 @@ const Hotel = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        // if (!id) return null;
-        const res = await fetch(`http://localhost:5000/locations/${id}`);
+        if (!id) return null;
+        const res = await fetch(`https://hotel-api-hpic.onrender.com/locations/${id}`);
         const data = await res.json();
-        // if (!data) return null;
+        if (!data) return null;
         return data;
       } catch (error) {
         throw new Error(error);
@@ -94,10 +94,10 @@ const Hotel = () => {
     if (searchValue.trim()) {
       const fetchSearch = async () => {
         const res = await fetch(
-          `http://localhost:5000/locations/${searchValue}`
+          `https://hotel-api-hpic.onrender.com/locations/?=${searchValue}`
         );
         const data = await res.json();
-        setHotel(data);
+        setHotel(data.filter((hotel) => hotel.name.toLowerCase().includes(searchValue)));
       };
       try {
         fetchSearch();
@@ -106,6 +106,7 @@ const Hotel = () => {
       fetchHotels();
     }
   };
+  console.log(hotel)
 
   const noHotel = hotels.status || hotels.message;
 
@@ -134,7 +135,7 @@ const Hotel = () => {
   return (
     <>
       <div className="container hotel">
-        {selected && <h1 className="hotel-name">{selected.title}</h1>}
+        {selected && <h1 className="hotel-name">{selected.name}</h1>}
         {selected && <p className="hotel-location">{selected.location}</p>}
         <div className="search-sidebar">
           <div className="hotel-search">
@@ -235,7 +236,7 @@ const Hotel = () => {
               close={handleClose}
               address={selected.location}
               gallery={gallery}
-              title={selected.title}
+              name={selected.name}
             />
           )}
         </div>

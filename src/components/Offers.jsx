@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { locations } from "../data";
-import { BsHeart } from "react-icons/bs";
 import LightBox from "./LightBox";
 import Hotels from "./Hotels";
-import Hotel from "./Hotel";
 
 const Offers = () => {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -12,7 +9,7 @@ const Offers = () => {
 
   useEffect(() => {
     const fetchHotels = async () => {
-      const res = await fetch(`http://localhost:5000/locations/`);
+      const res = await fetch(`https://hotel-api-hpic.onrender.com/locations`);
       const data = await res.json();
       setHotels(data);
     };
