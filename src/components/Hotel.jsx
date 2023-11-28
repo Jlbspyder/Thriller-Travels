@@ -22,14 +22,20 @@ import { LiaSmokingBanSolid } from "react-icons/lia";
 import { BiWifi } from "react-icons/bi";
 import { useParams } from "react-router-dom";
 import Carousel from "./Carousel";
+import { GrNext, GrPrevious  } from "react-icons/gr";
+import { DatePicker } from '@mui/x-date-pickers'
+import CheckIn from "./CheckIn";
+import CheckOut from "./CheckOut";
+import Footer from "./Footer";
 
 const Hotel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState(null);
   const [gallery, setGallery] = useState([]);
-  const [view, setView] = useState(false);
+  const [modal, setModal] = useState(false);
   const [hotel, setHotel] = useState([]);
   const [hotels, setHotels] = useState([]);
+  const [touchPosition, setTouchPosition] = useState(null);
   const [formData, setFormData] = useState({
     search: "",
     checkIn: "",
@@ -39,6 +45,8 @@ const Hotel = () => {
     apartments: "",
   });
   const { id } = useParams();
+
+  const  length = gallery.length
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -115,16 +123,13 @@ const Hotel = () => {
     searchHotel();
   };
 
-  const handleView = () => {
-    setView(!view);
-  };
   const handleClose = () => {
-    setView(false);
     setHotels(hotels);
+    setModal(false)
   };
 
   const getGallery = () => {
-    setView(true);
+    setModal(true)
     const pix = Object.entries(selected.thumbnail).map(([_, value]) => {
       const { img } = value;
       return img;
@@ -132,118 +137,165 @@ const Hotel = () => {
     setGallery(pix);
   };
 
+  
+
+  const handlePrevious = () => {
+    setCurrentIndex(currentIndex === 0 ? length - 1 : currentIndex - 1);
+  };
+  const handleNext = () => {
+    setCurrentIndex(currentIndex === length - 1 ? 0 : currentIndex + 1);
+  };
+
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+  const handleTouchMove = (e) => {
+    const touchDown = touchPosition;
+    if (touchDown === null) {
+      return;
+    }
+
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+
+    if (diff > 5) {
+      handleNext();
+    }
+
+    if (diff < -5) {
+      handlePrevious();
+    }
+
+    setTouchPosition(null);
+  };
+
+ 
+
   return (
     <>
       <div className="container hotel">
         {selected && <h1 className="hotel-name">{selected.name}</h1>}
         {selected && <p className="hotel-location">{selected.location}</p>}
-        <div className="search-sidebar">
-          <div className="hotel-search">
-            <h2>Search</h2>
-            <form onSubmit={handleSearch} className="form-control">
-              <label>Destination/property name:</label>
-              {selected && (
+          <div className="hotel-wrapper">
+            {selected && (
+                <div className="img-gallery">
+                  {selected && <h1 className="mobile hotel-name">{selected.name}</h1>}
+                  {selected && <p className="mobile hotel-location">{selected.location}</p>}
+                  <div className="gallery-wrapper">
+                    {Object.entries(selected.images).map(([_, image], index) => (
+                      <img
+                        key={index}
+                        src={image.img}
+                        alt="room-pix"
+                        className="hotel-img"
+                        onClick={() => getGallery(gallery)}
+                      />
+                    ))}
+                  </div>
+                  <div className="hotel-img-grid">
+                    {Object.entries(selected.thumbnail).map(([_, item], index) => (
+                      <img
+                        key={index}
+                        src={item.img}
+                        alt="room-pix"
+                        className="thumbnail"
+                        onClick={() => getGallery(gallery)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+                    {selected && (
+              <div className="mobile-img-gallery">
+                {selected && <h1 className="mobile hotel-name">{selected.name}</h1>}
+                {selected && <p className="mobile hotel-location">{selected.location}</p>}
+                <div className="hotel-img-gallery" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} >
+                  {Object.entries(selected.thumbnail).map(([_, item], index) => (
+                        <div key={index} className={index === currentIndex ? "hotel-img-view" : ""}>
+                        {index === currentIndex && <img
+                          src={item.img}
+                          alt="room-pix"
+                          className="pix"
+                          onClick={() => getGallery(gallery)}
+                        />}
+                        </div>
+                      ))}
+                      <GrPrevious className="prev" onClick={handlePrevious} />
+                      <GrNext  className="next" onClick={handleNext} />
+                </div>
+              </div>
+            )}
+            <div className="search-sidebar">
+            <div className="hotel-search">
+              <h2>Search</h2>
+              <form onSubmit={handleSearch} className="form-control">
+                <label>Destination/property name:</label>
+                {selected && (
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="Search for a hotel"
+                    ref={searchRef}
+                    onChange={searchHotel}
+                  />
+                )}
+              </form>
+              <div className="form-control">
+                <label htmlFor="checkIn">Check-in date</label>
+                  <input type="date" name="checkIn" id="checkIn" value={formData.checkIn} onChange={handleChange} />
+              </div>
+              <div className="form-control">
+                <label htmlFor="checkOut" >Check-out date</label>
+                  <input type="date" name="checkOut" id="checkOut" value={formData.checkOut} onChange={handleChange}/>
+              </div>
+              <div className="form-control">
+                <label htmlFor="persons">Number of Guests</label>
                 <input
                   type="text"
-                  name="search"
-                  placeholder="Search for a hotel"
-                  ref={searchRef}
-                  onChange={searchHotel}
-                />
-              )}
-            </form>
-            <div className="form-control">
-              <label htmlFor="date">Check-in date</label>
-              <input
-                type="date"
-                placeholder="Check-in date"
-                name="checkIn"
-                className="check-in"
-                value={formData.checkIn}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-control">
-              <label htmlFor="date" >Check-out date</label>
-              <input
-                type="date"
-                placeholder="Check-out date"
-                name="checkOut"
-                className="check-out"
-                value={formData.checkOut}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-control">
-              <label>Number of Guests</label>
-              <input
-                type="text"
-                placeholder="2 adults"
-                name="persons"
-                value={formData.persons}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="check">
-              <div className="checkbox">
-                <label htmlFor="homes">Entire homes & apartments</label>
-                <input
-                  type="checkbox"
-                  name="apartments"
+                  placeholder="2 adults"
+                  name="persons"
+                  id="persons"
+                  value={formData.persons}
                   onChange={handleChange}
-                  checked={formData.apartments}
                 />
               </div>
-              <div className="checkbox">
-                <label htmlFor="work">I'm travelling for work</label>
-                <input
-                  type="checkbox"
-                  name="business"
-                  onChange={handleChange}
-                  checked={formData.business}
-                />
+              <div className="check">
+                <div className="checkbox">
+                  <label htmlFor="apartments">Entire homes & apartments</label>
+                  <input
+                    type="checkbox"
+                    name="apartments"
+                    id="apartments"
+                    onChange={handleChange}
+                    checked={formData.apartments}
+                  />
+                </div>
+                <div className="checkbox">
+                  <label htmlFor="business">I'm travelling for work</label>
+                  <input
+                    type="checkbox"
+                    name="business"
+                    id="business"
+                    onChange={handleChange}
+                    checked={formData.business}
+                  />
+                </div>
               </div>
+              <button className="plan-btn">Search</button>
             </div>
-            <button className="plan-btn">Search</button>
+            {selected && (
+              <Carousel
+                hotels={hotels}
+                close={handleClose}
+                address={selected.location}
+                gallery={gallery}
+                modal={modal}
+                name={selected.name}
+              />
+            )}
+                    </div>
           </div>
-          {selected && (
-            <div className="img-gallery" onClick={handleView}>
-              {selected && <h1 className="mobile hotel-name">{selected.name}</h1>}
-              {selected && <p className="mobile hotel-location">{selected.location}</p>}
-              <div className="gallery-wrapper">
-                {Object.entries(selected.images).map(([_, image], index) => (
-                  <img
-                    key={index}
-                    src={image.img}
-                    alt="room-pix"
-                    className="hotel-img"
-                    onClick={() => getGallery(gallery)}
-                  />
-                ))}
-              </div>
-              <div className="hotel-img-grid">
-                {Object.entries(selected.thumbnail).map(([_, item], index) => (
-                  <img
-                    key={index}
-                    src={item.img}
-                    alt="room-pix"
-                    className="thumbnail"
-                    onClick={() => getGallery(gallery)}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-          {view && selected && (
-            <Carousel
-              hotels={hotels}
-              close={handleClose}
-              address={selected.location}
-              gallery={gallery}
-              name={selected.name}
-            />
-          )}
-        </div>
         {selected && (
           <div className="info-flex">
             {selected.accommodation && (
@@ -448,6 +500,7 @@ const Hotel = () => {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

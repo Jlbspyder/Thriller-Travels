@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GrNotification } from "react-icons/gr";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { SlCalender } from "react-icons/sl";
 import { BsPerson } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -74,8 +73,6 @@ const Hero = ({ open }) => {
 
   return (
     <main id="hero">
-      <div className="bar"></div>
-      <div className="bar2"></div>
       {<GiHamburgerMenu className="hamburger" onClick={open} />}
       <HiOutlineLocationMarker className="location-icon" />
       <BsPerson className="person-icon" />
@@ -98,18 +95,18 @@ const Hero = ({ open }) => {
           <div className="alert">
             <GrNotification className="bell" />
           </div>
-          {formData.persons && <div className="notif">{formData.persons}</div>}
         </div>
       </div>
       <div className="header-pix">
         <img src="/images/header-pix.jpg" alt="room" className="header-img" />
       </div>
       <div className="travel-info">
-        <div className="itenenary">
-          <div className="destination">
+        <form className="itenenary">
+          <div className="form-control">
             <select
               name="destination"
               id="destination"
+              className="dest"
               value={formData.destination}
               onChange={handleChange}
             >
@@ -124,35 +121,39 @@ const Hero = ({ open }) => {
                   <option>Norway - NW</option>
             </select>
           </div>
-          <div className="day">
+          <div className="form-control">
             <input 
                 type="date" 
                 id="check-in"
                 name="date"
-                className="check-in"
                 value={formData.date}
                 onChange={handleChange}
                 />
           </div>
-          <div className="people">
+          <div className="form-control">
             <select
               name="persons"
               id="persons"
+              className="person"
               value={formData.persons}
               onChange={handleChange}
             >
               <option hidden value="">
                 1 Adult
               </option>
-              <option>Adults</option>
-              <option>Children</option>
-              <option>Rooms</option>
+              <option>1 Adult</option>
+              <option>2 Adults</option>
+              <option>1 Child</option>
+              <option>2 Children</option>
+              <option>3 Children</option>
+              <option>1 Room</option>
+              <option>2 Rooms</option>
             </select>
           </div>
           <div className="button">
             <button className="btn">search</button>
           </div>
-        </div>
+        </form>
       </div>
     </main>
   );

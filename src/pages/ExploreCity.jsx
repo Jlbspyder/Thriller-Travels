@@ -105,7 +105,7 @@ const ExploreCity = () => {
                     Visa Type
                     <select 
                       name="visa" 
-                      id="visa-type"
+                      id="check-in"
                       value={formData.visa}
                       onChange={handleChange}
                       >
@@ -148,7 +148,7 @@ const ExploreCity = () => {
                 </div>
                 <div className="travel-plan__form">
                   <div className="form-control">
-                    Home Country
+                    <label htmlFor="home">Home Country</label>
                     <select 
                      name="country" 
                      id="home"
@@ -166,7 +166,7 @@ const ExploreCity = () => {
                     </select>
                   </div>
                   <div className="form-control">
-                    Destination
+                    <label htmlFor="destination">Destination</label>
                     <select 
                       name="destination" 
                       id="destination"
@@ -185,13 +185,13 @@ const ExploreCity = () => {
                     </select>
                   </div>
                   <div className="form-control">
-                    Select Date
+                    <label htmlFor="check-in">Select Date</label>
                     <input 
                       type="date" 
                       name="date" 
                       autoComplete="true"
                       className="calendar"
-                      id="date"
+                      id="check-in"
                       value={formData.date}
                       onChange={handleChange}
                       />
@@ -242,7 +242,6 @@ const ExploreCity = () => {
                         type="date" 
                         id="date" 
                         name="date" 
-                        className="calendar"
                         value={formData.date}
                         onChange={handleChange}
                         />
