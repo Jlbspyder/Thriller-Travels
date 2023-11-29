@@ -2074,7 +2074,7 @@ h1 {
   width: 100%;
 }
 .img-slider {
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 150px);
 }
 .back, .front {
   display: none;
