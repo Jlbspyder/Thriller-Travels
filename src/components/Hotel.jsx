@@ -228,7 +228,7 @@ const Hotel = () => {
             )}
             <div className="search-sidebar">
             <div className="hotel-search">
-              <h2>Search</h2>
+              {/* <h2>Search</h2>
               <form onSubmit={handleSearch} className="form-control">
                 <label>Destination/property name:</label>
                 {selected && (
@@ -240,7 +240,7 @@ const Hotel = () => {
                     onChange={searchHotel}
                   />
                 )}
-              </form>
+              </form> */}
               <div className="form-control">
                 <label htmlFor="checkIn">Check-in date</label>
                   <input type="date" name="checkIn" id="checkIn" value={formData.checkIn} onChange={handleChange} />
@@ -251,6 +251,26 @@ const Hotel = () => {
               </div>
               <div className="form-control">
                 <label htmlFor="persons">Number of Guests</label>
+                <select
+                name="persons"
+                id="persons"
+                value={formData.persons}
+                onChange={handleChange}
+                  >
+                             <option hidden value="">
+                  1 Adult
+                </option>
+                <option>1 Adult</option>
+                <option>2 Adults</option>
+                <option>1 Child</option>
+                <option>2 Children</option>
+                <option>3 Children</option>
+                <option>1 Room</option>
+                <option>2 Rooms</option>
+                            </select>
+              </div>
+              {/* <div className="form-control">
+                <label htmlFor="persons">Number of Guests</label>
                 <input
                   type="text"
                   placeholder="2 adults"
@@ -259,7 +279,7 @@ const Hotel = () => {
                   value={formData.persons}
                   onChange={handleChange}
                 />
-              </div>
+              </div> */}
               <div className="check">
                 <div className="checkbox">
                   <label htmlFor="apartments">Entire homes & apartments</label>
@@ -294,7 +314,7 @@ const Hotel = () => {
                 name={selected.name}
               />
             )}
-                    </div>
+          </div>
           </div>
         {selected && (
           <div className="info-flex">

@@ -186,6 +186,7 @@ input:valid {
   padding: 1.22em 3em;
   margin: 1.9rem 0 0 -2px;
   background: #000;
+  background: rgb(130, 130, 250);
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   border: none;
@@ -198,7 +199,7 @@ input:valid {
 }
 .btn:hover {
   cursor: pointer;
-  background: #4c4848;
+  background: rgb(152, 152, 245);
   color: #fff;
   transition: all 0.1s ease-in;
 }
@@ -881,16 +882,16 @@ input:valid {
   animation: zoom 0.5s ease-in-out;
 }
 .hotel-search {
-  padding-left: 10px;
+  padding: 10px 0 0 10px;
   background: rgb(130, 130, 250);
   border-radius: 3px;
 }
 .hotel-search form {
   border: none;
 }
-.hotel-search form input {
-  width: 180px;
-  text-align: left;
+.hotel-search .form-control input, .hotel-search .form-control select {
+  border-radius: 5px;
+  height: 45px;
 }
 .hotel-search form label {
   width: 178px;
@@ -1521,10 +1522,8 @@ h1 {
     width: 95%; 
     margin-left: -18px;
   }
-  .hotel-search form label {
-    width: 100%;
-    font-size: 20px;
-    text-align: left;
+  .hotel-search .form-control label {
+    font-size: 16px;
   }
   .form-control .check-in {
     width: 100%;
@@ -1534,6 +1533,9 @@ h1 {
   }
   .hotel-name, .hotel-location {
     display: none;
+  }
+  .check .checkbox label {
+    font-size: 16px;
   }
   .mobile {
     display: block;
@@ -1545,9 +1547,6 @@ h1 {
     margin: auto;
     border-radius: 3px;
     margin-top: -5px;
-  }
-  .hotel-search h2 {
-    padding: 1rem 0 0 1rem;
   }
   .hotel-search .form-control {
     width: 95%;
@@ -1610,7 +1609,7 @@ h1 {
   }
   .pix {
     animation: zoom 0.6s ease-in-out;
-    height: 300px;
+    height: 400px;
   }
   .thumbnail {
     width: 100%;
@@ -1678,9 +1677,9 @@ h1 {
     width: 98%;
   }
   .plan-btn {
-    padding: 1.6em 1.5em;
+    padding: 1.5em 1.5em;
     width: 90%;
-    margin: 2rem 0;
+    margin: 1rem 0;
     border: none;
   }
   .reserve {
@@ -1978,9 +1977,8 @@ h1 {
     width: 90%;
   }
   .hotel-search {
-    padding: 010px;
+    padding-right: 25px;
     width: 100%;
-    border-radius: 3px;
   }
   .hotel-search form {
     padding: 0;
@@ -2029,9 +2027,8 @@ h1 {
     margin-top: -120px;
     height: 115px;
   }
-  .hotel-search form input,
-  .hotel-search form label {
-    width: 100%;
+  .hotel-search .form-control input {
+    height: 40px;
   }
   .search-sidebar {
     display: flex;
@@ -2065,11 +2062,6 @@ h1 {
   text-align: center;
   margin-bottom: 10px;
 }
-.carousel-grid {
-  padding-left: 5px;
-  grid-template-columns: repeat(3, 200px);
-  grid-template-rows: repeat(4, 150px);
-}
 .carousel-header {
   margin-top: 1rem;
 }
@@ -2080,6 +2072,9 @@ h1 {
   margin-left: 0;
   height: 100%;
   width: 100%;
+}
+.img-slider {
+  grid-template-rows: repeat(2, 1fr);
 }
 .back, .front {
   display: none;
@@ -2141,10 +2136,10 @@ h1 {
     width: 100%;
   }
   .plan-btn {
-    width: 90%;
-    height: 55px;
+    height: 50px;
     margin: 3rem 0 3rem 1rem;
     border: none;
+    padding: 0;
   }
   .btn {
     height: 55px;
