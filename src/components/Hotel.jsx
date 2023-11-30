@@ -22,8 +22,8 @@ import { LiaSmokingBanSolid } from "react-icons/lia";
 import { BiWifi } from "react-icons/bi";
 import { useParams } from "react-router-dom";
 import Carousel from "./Carousel";
-import { GrNext, GrPrevious  } from "react-icons/gr";
-import { DatePicker } from '@mui/x-date-pickers'
+import { GrNext, GrPrevious } from "react-icons/gr";
+import { DatePicker } from "@mui/x-date-pickers";
 import CheckIn from "./CheckIn";
 import CheckOut from "./CheckOut";
 import Footer from "./Footer";
@@ -46,7 +46,7 @@ const Hotel = () => {
   });
   const { id } = useParams();
 
-  const  length = gallery.length
+  const length = gallery.length;
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -78,7 +78,9 @@ const Hotel = () => {
     const fetchHotels = async () => {
       try {
         if (!id) return null;
-        const res = await fetch(`https://hotel-api-hpic.onrender.com/locations/${id}`);
+        const res = await fetch(
+          `https://hotel-api-hpic.onrender.com/locations/${id}`
+        );
         const data = await res.json();
         if (!data) return null;
         return data;
@@ -105,7 +107,9 @@ const Hotel = () => {
           `https://hotel-api-hpic.onrender.com/locations/?=${searchValue}`
         );
         const data = await res.json();
-        setHotel(data.filter((hotel) => hotel.name.toLowerCase().includes(searchValue)));
+        setHotel(
+          data.filter((hotel) => hotel.name.toLowerCase().includes(searchValue))
+        );
       };
       try {
         fetchSearch();
@@ -114,7 +118,6 @@ const Hotel = () => {
       fetchHotels();
     }
   };
-  
 
   const noHotel = hotels.status || hotels.message;
 
@@ -125,19 +128,17 @@ const Hotel = () => {
 
   const handleClose = () => {
     setHotels(hotels);
-    setModal(false)
+    setModal(false);
   };
 
   const getGallery = () => {
-    setModal(true)
+    setModal(true);
     const pix = Object.entries(selected.thumbnail).map(([_, value]) => {
       const { img } = value;
       return img;
     });
     setGallery(pix);
   };
-
-  
 
   const handlePrevious = () => {
     setCurrentIndex(currentIndex === 0 ? length - 1 : currentIndex - 1);
@@ -170,116 +171,118 @@ const Hotel = () => {
     setTouchPosition(null);
   };
 
- 
-
   return (
     <>
       <div className="container hotel">
         {selected && <h1 className="hotel-name">{selected.name}</h1>}
         {selected && <p className="hotel-location">{selected.location}</p>}
-          <div className="hotel-wrapper">
-            {selected && (
-                <div className="img-gallery">
-                  {selected && <h1 className="mobile hotel-name">{selected.name}</h1>}
-                  {selected && <p className="mobile hotel-location">{selected.location}</p>}
-                  <div className="gallery-wrapper">
-                    {Object.entries(selected.images).map(([_, image], index) => (
+        <div className="hotel-wrapper">
+          {selected && (
+            <div className="img-gallery">
+              {selected && (
+                <h1 className="mobile hotel-name">{selected.name}</h1>
+              )}
+              {selected && (
+                <p className="mobile hotel-location">{selected.location}</p>
+              )}
+              <div className="gallery-wrapper">
+                {Object.entries(selected.images).map(([_, image], index) => (
+                  <img
+                    key={index}
+                    src={image.img}
+                    alt="room-pix"
+                    className="hotel-img"
+                    onClick={() => getGallery(gallery)}
+                  />
+                ))}
+              </div>
+              <div className="hotel-img-grid">
+                {Object.entries(selected.thumbnail).map(([_, item], index) => (
+                  <img
+                    key={index}
+                    src={item.img}
+                    alt="room-pix"
+                    className="thumbnail"
+                    onClick={() => getGallery(gallery)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+          {selected && (
+            <div className="mobile-img-gallery">
+              {selected && (
+                <h1 className="mobile hotel-name">{selected.name}</h1>
+              )}
+              {selected && (
+                <p className="mobile hotel-location">{selected.location}</p>
+              )}
+              <div
+                className="hotel-img-gallery"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+              >
+                {Object.entries(selected.thumbnail).map(([_, item], index) => (
+                  <div
+                    key={index}
+                    className={index === currentIndex ? "hotel-img-view" : ""}
+                  >
+                    {index === currentIndex && (
                       <img
-                        key={index}
-                        src={image.img}
-                        alt="room-pix"
-                        className="hotel-img"
-                        onClick={() => getGallery(gallery)}
-                      />
-                    ))}
-                  </div>
-                  <div className="hotel-img-grid">
-                    {Object.entries(selected.thumbnail).map(([_, item], index) => (
-                      <img
-                        key={index}
                         src={item.img}
                         alt="room-pix"
-                        className="thumbnail"
+                        className="pix"
                         onClick={() => getGallery(gallery)}
                       />
-                    ))}
+                    )}
                   </div>
-                </div>
-              )}
-                    {selected && (
-              <div className="mobile-img-gallery">
-                {selected && <h1 className="mobile hotel-name">{selected.name}</h1>}
-                {selected && <p className="mobile hotel-location">{selected.location}</p>}
-                <div className="hotel-img-gallery" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} >
-                  {Object.entries(selected.thumbnail).map(([_, item], index) => (
-                        <div key={index} className={index === currentIndex ? "hotel-img-view" : ""}>
-                        {index === currentIndex && <img
-                          src={item.img}
-                          alt="room-pix"
-                          className="pix"
-                          onClick={() => getGallery(gallery)}
-                        />}
-                        </div>
-                      ))}
-                      <GrPrevious className="prev" onClick={handlePrevious} />
-                      <GrNext  className="next" onClick={handleNext} />
-                </div>
+                ))}
+                <GrPrevious className="prev" onClick={handlePrevious} />
+                <GrNext className="next" onClick={handleNext} />
               </div>
-            )}
-            <div className="search-sidebar">
+            </div>
+          )}
+          <div className="search-sidebar">
             <div className="hotel-search">
-              {/* <h2>Search</h2>
-              <form onSubmit={handleSearch} className="form-control">
-                <label>Destination/property name:</label>
-                {selected && (
-                  <input
-                    type="text"
-                    name="search"
-                    placeholder="Search for a hotel"
-                    ref={searchRef}
-                    onChange={searchHotel}
-                  />
-                )}
-              </form> */}
               <div className="form-control">
                 <label htmlFor="checkIn">Check-in date</label>
-                  <input type="date" name="checkIn" id="checkIn" value={formData.checkIn} onChange={handleChange} />
+                <input
+                  type="date"
+                  name="checkIn"
+                  id="checkIn"
+                  value={formData.checkIn}
+                  onChange={handleChange}
+                />
               </div>
               <div className="form-control">
-                <label htmlFor="checkOut" >Check-out date</label>
-                  <input type="date" name="checkOut" id="checkOut" value={formData.checkOut} onChange={handleChange}/>
+                <label htmlFor="checkOut">Check-out date</label>
+                <input
+                  type="date"
+                  name="checkOut"
+                  id="checkOut"
+                  value={formData.checkOut}
+                  onChange={handleChange}
+                />
               </div>
               <div className="form-control">
                 <label htmlFor="persons">Number of Guests</label>
                 <select
-                name="persons"
-                id="persons"
-                value={formData.persons}
-                onChange={handleChange}
-                  >
-                             <option hidden value="">
-                  1 Adult
-                </option>
-                <option>1 Adult</option>
-                <option>2 Adults</option>
-                <option>1 Child</option>
-                <option>2 Children</option>
-                <option>3 Children</option>
-                <option>1 Room</option>
-                <option>2 Rooms</option>
-                            </select>
-              </div>
-              {/* <div className="form-control">
-                <label htmlFor="persons">Number of Guests</label>
-                <input
-                  type="text"
-                  placeholder="2 adults"
                   name="persons"
                   id="persons"
                   value={formData.persons}
                   onChange={handleChange}
-                />
-              </div> */}
+                >
+                  <option hidden value="">
+                    1 Adult
+                  </option>
+                  <option>2 Adults</option>
+                  <option>1 Child</option>
+                  <option>2 Children</option>
+                  <option>3 Children</option>
+                  <option>1 Room</option>
+                  <option>2 Rooms</option>
+                </select>
+              </div>
               <div className="check">
                 <div className="checkbox">
                   <label htmlFor="apartments">Entire homes & apartments</label>
@@ -315,7 +318,7 @@ const Hotel = () => {
               />
             )}
           </div>
-          </div>
+        </div>
         {selected && (
           <div className="info-flex">
             {selected.accommodation && (

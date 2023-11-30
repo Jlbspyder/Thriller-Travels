@@ -21,7 +21,7 @@ const ExploreCity = () => {
     country: "",
     persons: "",
     visa: "",
-    date: ""
+    date: "",
   });
 
   const handleChange = (e) => {
@@ -86,9 +86,7 @@ const ExploreCity = () => {
                   <div className="travel-plan__list">
                     <div id="visa" onClick={handleVisa}>
                       <FaPassport />
-                      <h3 className="visa">
-                        Visa
-                      </h3>
+                      <h3 className="visa">Visa</h3>
                     </div>
                     <div id="visa" onClick={handleFlight}>
                       <BsAirplaneFill />
@@ -103,12 +101,12 @@ const ExploreCity = () => {
                 <div className="travel-plan__form">
                   <div className="form-control viza">
                     Visa Type
-                    <select 
-                      name="visa" 
+                    <select
+                      name="visa"
                       id="check-in"
                       value={formData.visa}
                       onChange={handleChange}
-                      >
+                    >
                       <option hidden value="">
                         Choose Visa Type
                       </option>
@@ -136,9 +134,7 @@ const ExploreCity = () => {
                     </div>
                     <div id="visa" onClick={handleFlight}>
                       <BsAirplaneFill />
-                      <h3 className="visa">
-                        Flight
-                      </h3>
+                      <h3 className="visa">Flight</h3>
                     </div>
                     <div id="visa" onClick={handleStay}>
                       <MdBedroomChild />
@@ -149,11 +145,11 @@ const ExploreCity = () => {
                 <div className="travel-plan__form">
                   <div className="form-control">
                     <label htmlFor="home">Home Country</label>
-                    <select 
-                     name="country" 
-                     id="home"
-                     value={formData.country}
-                     onChange={handleChange}
+                    <select
+                      name="country"
+                      id="home"
+                      value={formData.country}
+                      onChange={handleChange}
                     >
                       <option hidden value="">
                         Choose Country
@@ -167,12 +163,12 @@ const ExploreCity = () => {
                   </div>
                   <div className="form-control">
                     <label htmlFor="destination">Destination</label>
-                    <select 
-                      name="destination" 
+                    <select
+                      name="destination"
                       id="destination"
                       value={formData.destination}
                       onChange={handleChange}
-                      >
+                    >
                       <option hidden value="">
                         Choose Destination
                       </option>
@@ -186,15 +182,15 @@ const ExploreCity = () => {
                   </div>
                   <div className="form-control">
                     <label htmlFor="check-in">Select Date</label>
-                    <input 
-                      type="date" 
-                      name="date" 
+                    <input
+                      type="date"
+                      name="date"
                       autoComplete="true"
                       className="calendar"
                       id="check-in"
                       value={formData.date}
                       onChange={handleChange}
-                      />
+                    />
                   </div>
                 </div>
                 <button className="plan-btn">Search</button>
@@ -214,9 +210,7 @@ const ExploreCity = () => {
                     </div>
                     <div id="visa" onClick={handleStay}>
                       <MdBedroomChild />
-                      <h3 className="visa">
-                        Stays
-                      </h3>
+                      <h3 className="visa">Stays</h3>
                     </div>
                   </div>
                 </div>
@@ -238,13 +232,14 @@ const ExploreCity = () => {
                   </div>
                   <div className="form-control">
                     Check-in date - Check-out date
-                    <input 
-                        type="date" 
-                        id="date" 
-                        name="date" 
-                        value={formData.date}
-                        onChange={handleChange}
-                        />
+                    <input
+                      type="date"
+                      id="date"
+                      name="date"
+                      className="travel-date"
+                      value={formData.date}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="form-control">
                     Number of Guests
@@ -257,9 +252,14 @@ const ExploreCity = () => {
                       <option hidden value="">
                         No of Guests
                       </option>
-                      <option>Adults</option>
-                      <option>Children</option>
-                      <option>Rooms</option>
+                      <option>1 Adult</option>
+                      <option>2 Adults</option>
+                      <option>1 Child</option>
+                      <option>2 Children</option>
+                      <option>3 Children</option>
+                      <option>1 Room</option>
+                      <option>2 Rooms</option>
+                      <option>3 Rooms</option>
                     </select>
                     <BsPerson className="stay-person-icon" />
                   </div>

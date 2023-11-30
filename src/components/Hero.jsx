@@ -8,11 +8,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Hero = ({ open }) => {
   const currentDay = new Date();
   const [date, setDate] = useState(currentDay);
-  const [country, setCountry] = useState([])
+  const [country, setCountry] = useState([]);
   const [formData, setFormData] = useState({
     destination: "",
     persons: "",
-    date: ""
+    date: "",
   });
 
   const handleChange = (e) => {
@@ -56,20 +56,19 @@ const Hero = ({ open }) => {
 
   const updateTime = () => {
     const currentDay = new Date();
-    const timeSet = setInterval(updateTime, 1000)
+    const timeSet = setInterval(updateTime, 1000);
     setDate(currentDay);
-    return () => clearInterval(timeSet)
+    return () => clearInterval(timeSet);
   };
 
   useEffect(() => {
     const getCountry = async () => {
-      const res = await fetch ('https://countriesnow.space/api/v0.1/countries')
-      const getcon = await res.json()
-      setCountry(getcon.data)
-    }
-    getCountry()
-  }, [])
-
+      const res = await fetch("https://countriesnow.space/api/v0.1/countries");
+      const getcon = await res.json();
+      setCountry(getcon.data);
+    };
+    getCountry();
+  }, []);
 
   return (
     <main id="hero">
@@ -113,22 +112,22 @@ const Hero = ({ open }) => {
               <option hidden value="">
                 Where are you going?
               </option>
-                  <option>Nigeria - NG</option>
-                  <option>Canada - CA</option>
-                  <option>United States of America - US</option>
-                  <option>New Zealand - NZ</option>
-                  <option>Unnited Kingdom - UK</option>
-                  <option>Norway - NW</option>
+              <option>Nigeria - NG</option>
+              <option>Canada - CA</option>
+              <option>United States of America - US</option>
+              <option>New Zealand - NZ</option>
+              <option>Unnited Kingdom - UK</option>
+              <option>Norway - NW</option>
             </select>
           </div>
           <div className="form-control">
-            <input 
-                type="date" 
-                id="check-in"
-                name="date"
-                value={formData.date}
-                onChange={handleChange}
-                />
+            <input
+              type="date"
+              id="check-in"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+            />
           </div>
           <div className="form-control">
             <select
