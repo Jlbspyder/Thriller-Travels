@@ -32,7 +32,7 @@ const SideBar = ({ openMenu, close }) => {
       <div className={openMenu ? "sidebar mobile" : "sidebar"}>
         {<IoMdClose className="close-menu" onClick={close} />}
         <div className="sidebar-top">
-          <h3>MimaBooking</h3>
+          <h3>JLB TRAVELS</h3>
           {avatar && (
             <div className="pix-wrapper">
               <img src={avatar} alt="profile" className="profile-pix" />

@@ -11,7 +11,7 @@ const Footer = () => {
     <footer>
       <div className="container section-flex footer">
         <div className="footer__header">
-          <h1>MimaBooking</h1>
+          <h2 id="logo">JLB TRAVELS</h2>
           <ul className="socials">
             <li>
               <Link to="https://www.instagram.com/jlb_me/" target="_blank">
