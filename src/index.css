@@ -2070,35 +2070,34 @@ h1 {
     font-size: 10px;
     gap: 5px;
   }
-  /* Carousel styles */
-  .image-pane {
-    position: fixed;
-    inset: 0 0 0 0;
-    background: #fff;
-    overflow: auto;
-  }
-  .carousel h2 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .carousel-header {
-    margin-top: 1rem;
-  }
-  .img-view {
-    height: 500px;
-  }
-  .slider-image {
-    margin-left: 0;
-    height: 100%;
-    width: 100%;
-  }
-  .img-slider {
-    grid-template-rows: repeat(2, 1fr);
-  }
-  .back,
-  .front {
-    display: none;
-  }
+   /* Carousel styles */
+.image-pane {
+  position: fixed;
+  inset: 0 0 0 0;
+  background: #fff;
+  overflow: auto;
+}
+.carousel h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.carousel-header {
+  margin-top: 1rem;
+}
+.img-view {
+  height: 500px;
+}
+.slider-image {
+  margin-left: 0;
+  height: 100%;
+  width: 100%;
+}
+.img-slider {
+  grid-template-rows: repeat(2, 150px);
+}
+.back, .front {
+  display: none;
+}
   /* Explore-cities styles */
   .plan form {
     width: 92%;
