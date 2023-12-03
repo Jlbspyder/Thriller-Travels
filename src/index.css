@@ -480,7 +480,9 @@ input:valid {
   border-radius: 10px;
   margin: auto;
   height: 100%;
+  max-width: 100%;
   cursor: pointer;
+
 }
 .content__img.travel {
   width: 120%;
@@ -1449,11 +1451,13 @@ h1 {
     margin-left: 0.3rem;
     border-radius: 5px;
   }
+  .form-control.viza {
+    width: 380px;
+  }
   #check-in {
     background: #fff;
-    width: 95%;
-    margin-left: 0;
-    color: gray;
+    width: 100%;
+    margin-left: -0.5rem;
   }
   .location-icon,
   .calender-icon,
@@ -1540,7 +1544,7 @@ h1 {
   /* Hotel styles */
   .mobile-date {
     display: block;
-    width: 300px;
+    width: 95%;
     animation: zoom 0.5s ease-in-out;
   }
   .desktop-date {
@@ -1718,9 +1722,12 @@ h1 {
   }
   .plan-btn {
     padding: 1.5em 1.5em;
-    width: 80%;
-    margin: 2rem 0 1rem -1rem;
+    width: 100%;
+    margin: 2rem 0 1rem 0;
     border: none;
+  }
+  .stay {
+    margin-left: 1rem;
   }
   .reserve {
     margin: 6rem 0 0 2.5rem;
@@ -1775,10 +1782,6 @@ h1 {
     width: 90%;
     margin: 2rem 0 0 1rem;
   }
-  /* .form-control select,
-  .form-control input {
-    width: 95%;
-  } */
   .form-control .calendar {
     width: 100%;
   }
@@ -2024,9 +2027,12 @@ h1 {
   /* Hotel styles */
   .tablet-date {
     display: block;
-    width: 450px;
+    width: 90%;
     margin-left: 1rem;
     animation: zoom 0.5s ease-in-out;
+  }
+  .form-control.viza {
+    width: 500px;
   }
   .desktop-date {
     display: none;
@@ -2243,6 +2249,8 @@ h1 {
   }
   .img-grid {
     width: 100%;
+    grid-template-columns: repeat(2, 260px);
+    grid-template-rows: repeat(2, 250px);
   }
   .img-grid.travel {
     display: block;

@@ -12,7 +12,6 @@ const TabletDatePicker = () => {
             width: "85%",
             background: "white",
             borderRadius: "5px",
-            // marginLeft: "15px",
             marginTop: "30px"
           }}
         >
@@ -31,7 +30,6 @@ const TabletDatePicker = () => {
             width: "85%",
             background: "white",
             borderRadius: "5px",
-            // marginLeft: "15px",
             marginTop: "30px"
           }}
         >
