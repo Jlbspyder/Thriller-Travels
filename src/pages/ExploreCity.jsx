@@ -7,6 +7,7 @@ import { BsPerson } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import City from "../components/City";
 import { countries, bookings } from "../data";
+import Date from "../components/Date";
 
 const ExploreCity = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -166,6 +167,7 @@ const ExploreCity = () => {
                     <select
                       name="destination"
                       id="destination"
+                      // className="dest"
                       value={formData.destination}
                       onChange={handleChange}
                     >
@@ -180,9 +182,18 @@ const ExploreCity = () => {
                       <option>Norway - NW</option>
                     </select>
                   </div>
-                  <div className="form-control">
-                    <label htmlFor="check-in">Select Date</label>
-                    <input
+                  {/* <div className="form-control">
+                    <label htmlFor="check-in">Select Date</label> */}
+                    <div className="desktop-date">
+                    <Date />
+                  </div>
+                  <div className="mobile-date">
+                    <Date />
+                  </div>
+                  <div className="tablet-date">
+                    <Date />
+                  </div>
+                    {/* <input
                       type="date"
                       name="date"
                       autoComplete="true"
@@ -190,8 +201,8 @@ const ExploreCity = () => {
                       id="check-in"
                       value={formData.date}
                       onChange={handleChange}
-                    />
-                  </div>
+                    /> */}
+                  {/* </div> */}
                 </div>
                 <button className="plan-btn">Search</button>
               </form>
@@ -228,19 +239,28 @@ const ExploreCity = () => {
                       <option>Unnited Kingdom - UK</option>
                       <option>Norway - NW</option>
                     </select>
-                    <HiOutlineLocationMarker className="stay-location-icon" />
+                    {/* <HiOutlineLocationMarker className="stay-location-icon" /> */}
                   </div>
-                  <div className="form-control">
-                    Check-in date - Check-out date
-                    <input
+                  {/* <div className="form-control"> */}
+                  {/* Check-in date - Check-out date */}
+                  <div className="desktop-date">
+                    <Date />
+                  </div>
+                  <div className="mobile-date">
+                    <Date />
+                  </div>
+                  <div className="tablet-date">
+                    <Date />
+                  </div>
+                  {/* <input
                       type="date"
                       id="date"
                       name="date"
                       className="travel-date"
                       value={formData.date}
                       onChange={handleChange}
-                    />
-                  </div>
+                    /> */}
+                  {/* </div> */}
                   <div className="form-control">
                     Number of Guests
                     <select
@@ -261,10 +281,10 @@ const ExploreCity = () => {
                       <option>2 Rooms</option>
                       <option>3 Rooms</option>
                     </select>
-                    <BsPerson className="stay-person-icon" />
+                    {/* <BsPerson className="stay-person-icon" /> */}
                   </div>
                 </div>
-                <button className="plan-btn">Search</button>
+                <button className="plan-btn stay">Search</button>
               </form>
             )}
           </div>

@@ -4,27 +4,19 @@ import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Paper'
 import { DatePicker } from "@mui/x-date-pickers";
 
-const CheckOut = () => {
+const DesktopDatePicker = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   return (
     <>
-    <Box sx= {{ 
-        flexGrow: 1,
-        width: "180px",
-        background: "#fff",
-        borderRadius: "5px",
-        marginTop: "20px",
-        marginLeft: "15px",
-        }}>
-    <Grid container spacing={0}>
-    <Grid item xs={12} md={12}>
         <Stack
           spacing={4}
           sx={{
             width: "100%",
-            background: "#orange",
+            background: "white",
             borderRadius: "5px",
+            marginLeft: "15px",
+            marginTop: "20px"
           }}
         >
           <DatePicker
@@ -36,25 +28,14 @@ const CheckOut = () => {
             }}
           />
         </Stack>
-      </Grid>
-    </Grid>
-    </Box>
-    <Box sx= {{ 
-        flexGrow: 1,
-        width: "180px",
-        background: "#fff",
-        borderRadius: "5px",
-        marginTop: "20px",
-        marginLeft: "15px",
-        }}>
-    <Grid container spacing={0}>
-    <Grid item xs={12} md={12}>
         <Stack
           spacing={4}
           sx={{
             width: "100%",
-            background: "#orange",
+            background: "white",
             borderRadius: "5px",
+            marginLeft: "15px",
+            marginTop: "20px"
           }}
         >
           <DatePicker
@@ -66,11 +47,8 @@ const CheckOut = () => {
             }}
           />
         </Stack>
-      </Grid>
-    </Grid>
-    </Box>
     </>
   );
 };
 
-export default CheckOut;
+export default DesktopDatePicker;

@@ -4,6 +4,7 @@ import { GrNotification } from "react-icons/gr";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BsPerson } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
+import MainDate from "./MainDate";
 
 const Hero = ({ open }) => {
   const currentDay = new Date();
@@ -120,15 +121,18 @@ const Hero = ({ open }) => {
               <option>Norway - NW</option>
             </select>
           </div>
-          <div className="form-control">
-            <input
+          {/* <div className="form-control"> */}
+            <div className="main-date">
+              <MainDate />
+            </div>
+            {/* <input
               type="date"
               id="check-in"
               name="date"
               value={formData.date}
               onChange={handleChange}
-            />
-          </div>
+            /> */}
+          {/* </div> */}
           <div className="form-control">
             <select
               name="persons"

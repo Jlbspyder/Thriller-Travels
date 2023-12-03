@@ -23,10 +23,10 @@ import { BiWifi } from "react-icons/bi";
 import { useParams } from "react-router-dom";
 import Carousel from "./Carousel";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { DatePicker } from "@mui/x-date-pickers";
-import CheckIn from "./CheckIn";
-import CheckOut from "./CheckOut";
+import DesktopDatePicker from "./DesktopDatePicker";
+import DatePicker from "./MobileDatePicker";
 import Footer from "./Footer";
+import TabletDatePicker from "./TabletDate";
 
 const Hotel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -244,28 +244,38 @@ const Hotel = () => {
           )}
           <div className="search-sidebar">
             <div className="hotel-search">
+              <div className="desktop-date">
+                <DesktopDatePicker />
+              </div>
+              <div className="mobile-date">
+                <DatePicker />
+              </div>
+              <div className="tablet-date">
+                <TabletDatePicker />
+              </div>
               <div className="form-control">
-                <label htmlFor="checkIn">Check-in date</label>
-                <input
+                {/* <label htmlFor="checkIn">Check-in date</label> */}
+                {/* <CheckOut /> */}
+                {/* <input
                   type="date"
                   name="checkIn"
                   id="checkIn"
                   value={formData.checkIn}
                   onChange={handleChange}
-                />
+                /> */}
               </div>
               <div className="form-control">
-                <label htmlFor="checkOut">Check-out date</label>
+                {/* <label htmlFor="checkOut">Check-out date</label>
                 <input
                   type="date"
                   name="checkOut"
                   id="checkOut"
                   value={formData.checkOut}
                   onChange={handleChange}
-                />
+                /> */}
               </div>
               <div className="form-control">
-                <label htmlFor="persons">Number of Guests</label>
+                {/* <label htmlFor="persons">Number of Guests</label> */}
                 <select
                   name="persons"
                   id="persons"
@@ -273,7 +283,7 @@ const Hotel = () => {
                   onChange={handleChange}
                 >
                   <option hidden value="">
-                    1 Adult
+                    Number of Guests
                   </option>
                   <option>2 Adults</option>
                   <option>1 Child</option>
