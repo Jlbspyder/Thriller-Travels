@@ -121,18 +121,9 @@ const Hero = ({ open }) => {
               <option>Norway - NW</option>
             </select>
           </div>
-          {/* <div className="form-control"> */}
             <div className="main-date">
               <MainDate />
             </div>
-            {/* <input
-              type="date"
-              id="check-in"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-            /> */}
-          {/* </div> */}
           <div className="form-control">
             <select
               name="persons"

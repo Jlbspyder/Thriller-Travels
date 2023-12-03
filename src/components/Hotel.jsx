@@ -253,29 +253,9 @@ const Hotel = () => {
               <div className="tablet-date">
                 <TabletDatePicker />
               </div>
+              <div className="form-control"></div>
+              <div className="form-control"></div>
               <div className="form-control">
-                {/* <label htmlFor="checkIn">Check-in date</label> */}
-                {/* <CheckOut /> */}
-                {/* <input
-                  type="date"
-                  name="checkIn"
-                  id="checkIn"
-                  value={formData.checkIn}
-                  onChange={handleChange}
-                /> */}
-              </div>
-              <div className="form-control">
-                {/* <label htmlFor="checkOut">Check-out date</label>
-                <input
-                  type="date"
-                  name="checkOut"
-                  id="checkOut"
-                  value={formData.checkOut}
-                  onChange={handleChange}
-                /> */}
-              </div>
-              <div className="form-control">
-                {/* <label htmlFor="persons">Number of Guests</label> */}
                 <select
                   name="persons"
                   id="persons"

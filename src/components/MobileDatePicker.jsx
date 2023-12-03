@@ -32,7 +32,8 @@ const DatePicker = () => {
             background: "white",
             borderRadius: "5px",
             marginLeft: "15px",
-            marginTop: "40px"
+            marginTop: "40px",
+            marginBottom: "20px"
           }}
         >
           <MobileDatePicker
