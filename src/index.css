@@ -1582,7 +1582,8 @@ h1 {
     padding: 0;
   }
   .hotel-search .form-control select {
-    height: 55px;
+    height: 57px;
+    margin-top: 10px;
   }
   .form-control .check-in {
     width: 100%;
@@ -1747,7 +1748,7 @@ h1 {
     margin-left: 1rem;
   }
   .reserve {
-    margin: 6rem 0 0 0;
+    margin: 6rem 0 0 1rem;
   }
   .viz {
     height: 55px;
