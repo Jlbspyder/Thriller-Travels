@@ -122,12 +122,6 @@ const Hotel = () => {
     }
   };
 
-  // const noHotel = hotels.status || hotels.message;
-
-  // const handleSearch = (e) => {
-  //   e.preventDefault();
-  //   searchHotel();
-  // };
 
   const handleClose = () => {
     setModal(false);
