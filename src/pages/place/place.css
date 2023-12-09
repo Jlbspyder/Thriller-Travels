@@ -126,7 +126,7 @@
     display: none;
   }
   .mobile-explore-header {
-    padding-inline: 15px;
+    padding-inline: 25px;
     margin-top: 4rem;
   }
   .mobile-main {
@@ -154,7 +154,7 @@
   }
   .tour-info {
     flex-direction: column;
-    padding: 10px 15px;
+    padding: 10px 25px;
   }
   .tour-info__left {
     width: 100%;
