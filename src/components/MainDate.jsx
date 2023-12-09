@@ -10,8 +10,8 @@ const MainDate = () => {
     sx={{
       width: "100%",
       background: "white",
-      borderRadius: "5px",
       marginTop: "50px",
+      borderRadius: "none"
     }}
   >
     <DatePicker

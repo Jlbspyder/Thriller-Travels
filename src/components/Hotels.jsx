@@ -2,12 +2,12 @@ import React from "react";
 import { BsHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const Hotels = ({ title, location, price, img, id }) => {
+const Hotels = ({ name, location, price, img, id }) => {
   return (
     <Link to={`/${id}`}>
       <div className="rooms__info">
         <img src={img} alt="room" className="room" />
-        <h5>{title}</h5>
+        <h5>{name}</h5>
         <div className="place">
           <p>{location}</p>
           <div className="heart-wrapper">

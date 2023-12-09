@@ -12,6 +12,9 @@ import Setting from "./pages/Setting";
 import MobileHeader from "./components/MobileHeader";
 import Footer from "./components/Footer";
 import Hotel from "./components/Hotel";
+import Location from "./pages/location/Location";
+import Place from "./pages/place/Place";
+
 
 function App() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -23,7 +26,7 @@ function App() {
   const handleOpen = () => {
     setOpenMenu(true);
   };
-
+  
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -111,6 +114,35 @@ function App() {
                   open={handleOpen}
                />
                <Hotel />
+               <SideBar openMenu={openMenu} close={handleClose} />
+              </>
+            }
+          />
+          <Route 
+            path="/location/:id"
+            element={
+              <>
+                 <MobileHeader 
+                  openMenu={openMenu}
+                  close={handleClose}
+                  open={handleOpen}
+               />
+               <Location  />
+               <SideBar openMenu={openMenu} close={handleClose} />
+              </>
+            }
+          />
+          <Route 
+            path="/place/:id"
+            element={
+              <>
+                 <MobileHeader 
+                  openMenu={openMenu}
+                  close={handleClose}
+                  open={handleOpen}
+               />
+               <Place  />
+               <Footer />
                <SideBar openMenu={openMenu} close={handleClose} />
               </>
             }

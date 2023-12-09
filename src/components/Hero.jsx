@@ -98,7 +98,7 @@ const Hero = ({ open }) => {
         </div>
       </div>
       <div className="header-pix">
-        <img src="/images/header-pix.jpg" alt="room" className="header-img" />
+        <img src="images/header-pix.jpg" alt="room" className="header-img" />
       </div>
       <div className="travel-info">
         <form className="itenenary">

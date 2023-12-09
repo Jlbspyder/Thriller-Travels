@@ -24,9 +24,12 @@ import { useParams } from "react-router-dom";
 import Carousel from "./Carousel";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import DesktopDatePicker from "./DesktopDatePicker";
+import DesktopDatePicker2 from "./DesktopDatePicker2";
 import DatePicker from "./MobileDatePicker";
 import Footer from "./Footer";
 import TabletDatePicker from "./TabletDate";
+import TabletDatePicker2 from "./TabletDate2";
+import DatePicker2 from "./MobileDatePicker2";
 
 const Hotel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -119,15 +122,14 @@ const Hotel = () => {
     }
   };
 
-  const noHotel = hotels.status || hotels.message;
+  // const noHotel = hotels.status || hotels.message;
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    searchHotel();
-  };
+  // const handleSearch = (e) => {
+  //   e.preventDefault();
+  //   searchHotel();
+  // };
 
   const handleClose = () => {
-    setHotels(hotels);
     setModal(false);
   };
 
@@ -246,12 +248,15 @@ const Hotel = () => {
             <div className="hotel-search">
               <div className="desktop-date">
                 <DesktopDatePicker />
+                <DesktopDatePicker2 />
               </div>
               <div className="mobile-date">
                 <DatePicker />
+                <DatePicker2 />
               </div>
               <div className="tablet-date">
                 <TabletDatePicker />
+                <TabletDatePicker2 />
               </div>
               <div className="form-control"></div>
               <div className="form-control"></div>

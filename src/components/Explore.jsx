@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { explore } from "../data";
 import LightBox from "./LightBox";
+import Places from "./Places";
 
 const Explore = () => {
-  const [selectedImg, setSelectedImg] = useState(null);
   return (
     <section id="explore">
       <div className="explore__header">
@@ -12,23 +12,12 @@ const Explore = () => {
         </div>
       </div>
       <div className="explore">
-        {explore.map((item, index) => (
-          <div key={index} className="city" onClick={() => setSelectedImg(item.img)}>
-            <img src={item.img} alt="img" className="city__img" />
-            <div className="city__description">
-              <h4>{item.title}</h4>
-              <p>{item.location}</p>
-              <h6>
-                ${item.price}
-                <span>/person</span>
-              </h6>
-            </div>
+      {explore.map((item, index) => (
+          <div key={index} className="city">
+            <Places {...item} index={index} />
           </div>
         ))}
       </div>
-      {selectedImg && (
-        <LightBox selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
-      )}
     </section>
   );
 };

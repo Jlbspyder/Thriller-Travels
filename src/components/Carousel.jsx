@@ -39,7 +39,6 @@ const Carousel = ({ address, gallery, name, close, modal }) => {
     setTouchPosition(null);
   };
 
-
   return (
     <>
       <div className={`container ${modal ? "image-pane open" : "image-pane"}`}>
@@ -49,7 +48,11 @@ const Carousel = ({ address, gallery, name, close, modal }) => {
           <p className="hotel-location">{address}</p>
           <AiOutlineClose className="close" onClick={close} />
         </div>
-        <div className="view-wrapper" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} >
+        <div
+          className="view-wrapper"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
           {gallery.map((pix, index) => (
             <div
               key={index}
@@ -74,7 +77,7 @@ const Carousel = ({ address, gallery, name, close, modal }) => {
             <img
               style={{
                 border:
-                  index === currentIndex ? "2px solid rgb(3, 3, 143)" : "",
+                  index === currentIndex ? "3px solid rgb(3, 3, 143)" : "",
                 opacity: index === currentIndex ? "50%" : "",
               }}
               key={index}
