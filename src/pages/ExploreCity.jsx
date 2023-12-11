@@ -5,7 +5,10 @@ import { BsAirplaneFill } from "react-icons/bs";
 import { MdBedroomChild } from "react-icons/md";
 import City from "../components/City";
 import { countries, bookings } from "../data";
-import TravelDate from "../components/TravelDate";
+import MobileTravelDate from "../components/MobileTravelDate";
+import TabletTravelDate from "../components/TabletTravelDate";
+import MediumScreenTravelDate from "../components/MediumScreenDate";
+import ProDate from "../components/ProDate";
 
 const ExploreCity = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -99,7 +102,7 @@ const ExploreCity = () => {
                 </div>
                 <div className="travel-plan__form">
                   <div className="form-control viza">
-                    Visa Type
+                    <label htmlFor="">Visa Type</label>
                     <select
                       name="visa"
                       id="check-in"
@@ -165,7 +168,6 @@ const ExploreCity = () => {
                     <select
                       name="destination"
                       id="destination"
-                      // className="dest"
                       value={formData.destination}
                       onChange={handleChange}
                     >
@@ -181,13 +183,24 @@ const ExploreCity = () => {
                     </select>
                   </div>
                   <div className="desktop-traveldate">
-                    <TravelDate />
+                  <label htmlFor="">Check-in date - Check-out date</label>
+                    <MobileTravelDate />
+                  </div>
+                  <div className="pro-traveldate">
+                  <label htmlFor="">Dates</label>
+                    <ProDate />
                   </div>
                   <div className="mobile-traveldate">
-                    <TravelDate />
+                  <label htmlFor="">Check-in date - Check-out date</label>
+                    <MobileTravelDate />
                   </div>
                   <div className="tablet-traveldate">
-                    <TravelDate />
+                  <label htmlFor="">Check-in date - Check-out date</label>
+                    <TabletTravelDate />
+                  </div>
+                  <div className="medium-screen-traveldate">
+                  <label htmlFor="">Check-in date - Check-out date</label>
+                    <MediumScreenTravelDate />
                   </div>
                 </div>
                 <button className="plan-btn">Search</button>
@@ -213,7 +226,7 @@ const ExploreCity = () => {
                 </div>
                 <div className="travel-plan__form">
                   <div className="form-control">
-                    Desrination
+                    <label htmlFor="">Destination</label>
                     <select name="country" id="destination">
                       <option hidden value="">
                         Where are you going?
@@ -227,19 +240,30 @@ const ExploreCity = () => {
                     </select>
                   </div>
                   <div className="desktop-traveldate">
-                    <TravelDate />
+                  <label htmlFor="">Check-in date - Check-out date</label>
+                    <MobileTravelDate />
+                  </div>
+                  <div className="pro-traveldate">
+                  <label htmlFor="">Dates</label>
+                    <ProDate />
                   </div>
                   <div className="mobile-traveldate">
-                    <TravelDate />
+                  <label htmlFor="">Check-in date - Check-out date</label>
+                    <MobileTravelDate />
                   </div>
                   <div className="tablet-traveldate">
-                    <TravelDate />
+                  <label htmlFor="">Check-in date - Check-out date</label>
+                    <TabletTravelDate />
+                  </div>
+                  <div className="medium-screen-traveldate">
+                  <label htmlFor="">Check-in date - Check-out date</label>
+                    <MediumScreenTravelDate />
                   </div>
                   <div className="form-control">
-                    Number of Guests
+                    <label htmlFor="">Number of Guests</label>
                     <select
                       name="persons"
-                      id="guests"
+                      id="destination"
                       value={formData.persons}
                       onChange={handleChange}
                     >

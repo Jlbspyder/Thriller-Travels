@@ -2,19 +2,20 @@ import React, {useState } from 'react'
 import { Stack, TextField } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers'
 
-const MainDate = () => {
+const TabletTravelDate = () => {
     const [selectedDate, setSelectedDate] = useState(null)
   return (
     <Stack
     spacing={4}
     sx={{
-      width: "100%",
+      width: "418px",
       background: "white",
-      marginTop: "50px",
       borderRadius: "5px",
+      marginLeft: "12px"
     }}
   >
     <DatePicker
+      label="Choose date"
       textField={(params) => <TextField {...params} />}
       value={selectedDate}
       onChange={(newValue) => {
@@ -25,5 +26,4 @@ const MainDate = () => {
   )
 }
 
-export default MainDate
-
+export default TabletTravelDate

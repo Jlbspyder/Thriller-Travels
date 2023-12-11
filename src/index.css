@@ -524,9 +524,9 @@ input:valid {
   position: absolute;
   width: 40%;
   height: 45px;
-  font-size: 14px;
+  font-size: 12px;
   top: 90%;
-  left: 30%;
+  left: 40%;
   border-radius: 5px;
 }
 .sub {
@@ -921,7 +921,7 @@ input:valid {
   border-radius: 5px;
   height: 50px;
 }
-.mobile-date,  .tablet-date, .mobile-traveldate, .tablet-traveldate {
+.mobile-date,  .tablet-date, .mobile-traveldate, .tablet-traveldate, .medium-screen-traveldate, .pro-traveldate {
   display: none;
 }
 .desktop-date {
@@ -930,6 +930,7 @@ input:valid {
 }
 .desktop-traveldate {
   width: 80%;
+  margin-top: 32px;
   animation: zoom 0.5s ease-in-out;
 }
 .hotel-search form label {
@@ -1452,7 +1453,8 @@ h1 {
     align-items: center;
   }
   .form-control .person {
-    width: 340px;
+    width: 100%;
+    /* width: 340px; */
     margin-left: -0.5rem;
     border-radius: 5px;
     text-align: center;
@@ -1555,7 +1557,7 @@ h1 {
     margin-top: 3rem;
   }
   .main-date {
-    width: 340px;
+    width: 90%;
     color: rgb(130, 130, 250);
     margin: -1rem 0 0 -0.1rem;
   }
@@ -1568,6 +1570,7 @@ h1 {
   .mobile-traveldate {
     display: block;
     width: 90%;
+    margin-top: 35px;
     animation: zoom 0.5s ease-in-out;
   }
   .desktop-date, .desktop-traveldate {
@@ -1613,9 +1616,6 @@ h1 {
     width: 95%;
   }
   .check label {
-    font-size: 1.5rem;
-  }
-  .form-control label {
     font-size: 1.5rem;
   }
   .hotel-search button {
@@ -1741,7 +1741,9 @@ h1 {
   }
   .plan-btn {
     padding: 1.2em;
-    margin: 2rem 0 1rem auto;
+    width: 90%;
+    height: 55px;
+    margin: 2rem 1rem 1rem auto;
     border: none;
   }
   .stay {
@@ -1754,7 +1756,8 @@ h1 {
   }
   .viz {
     height: 55px;
-    margin-left: 0.5rem;
+    width: 100%;
+    margin-left: 1.5rem;
   }
  .img-grid {
     width: 100%;
@@ -1794,7 +1797,7 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 0;
   }
   .form-control {
     display: flex;
@@ -1837,7 +1840,7 @@ h1 {
   .btn.travel {
     height: 45px;
     font-size: 12px;
-    top: 70%;
+    top: 80%;
     left: 35%;
   }
   .subscribe h1 {
@@ -2142,7 +2145,8 @@ h1 {
     margin-left: 0;
   }
   .travel-plan__form select {
-    width: 450px;
+    width: 100%;
+    margin-left: 1rem;
   }
   .spec {
     display: flex;
@@ -2188,8 +2192,12 @@ h1 {
 }
   /* Explore-cities styles */
   .plan form {
-    width: 92%;
+    padding-right: 0;
   }
+  .tablet-traveldate {
+    margin: 2.5rem 0 0.8rem 2rem;
+  }
+
   .travel-plan {
     width: 100%;
   }
@@ -2197,6 +2205,10 @@ h1 {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
+  }
+  .travel-plan__form label {
+    font-size: 1.2rem;
+    margin: 0 0 0 16px
   }
   .form-control {
     font-size: 1rem;
@@ -2223,7 +2235,11 @@ h1 {
     border-bottom-right-radius: 0;
   }
   .form-control.viza select {
-    width: 90%;
+    width: 100%;
+  }
+  .viza {
+    padding-left: 0;
+    margin-left: 0;
   }
   .travel-plan__list {
     text-align: center;
@@ -2297,7 +2313,7 @@ h1 {
     width: 25%;
     font-size: 10px;
     top: 75%;
-    left: 40%;
+    left: 45%;
     border-radius: 5px;
   }
   .content h3 {
@@ -2369,10 +2385,9 @@ h1 {
   .socials {
     display: none;
   }
-  @media (min-width: 768px) and (max-width: 800px) {
+  @media (min-width: 768px) and (max-width: 900px) {
     .tablet-date {
       display: block;
-      width: 100%;
       margin-left: 1rem;
       animation: zoom 0.5s ease-in-out;
     }
@@ -2381,6 +2396,10 @@ h1 {
       width: 90%;
       margin-left: 2rem;
       animation: zoom 0.5s ease-in-out;
+    }
+    .travel-plan__form select {
+      width: 92%;
+      
     }
     .img-slider {
       grid-template-columns: repeat(4, 1fr);
@@ -2391,6 +2410,14 @@ h1 {
     .img-slider {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, 100px);      
+    }
+    .tablet-traveldate {
+      display: none;
+    }
+    .medium-screen-traveldate {
+      display: block;
+      margin-top: 35px;
+      animation: zoom 0.5s ease-in-out;
     }
   }
   @media (min-width: 890px) and (max-width: 900px) {
@@ -2443,28 +2470,45 @@ h1 {
     }
     .travel-plan__form {
       flex-direction: row;
+      justify-content: space-between;
     }
-    .tablet-date {
+    .plan form {
+      padding-right: 1rem;
+    }
+    .travel-plan__form select {
       width: 100%;
     }
-    .travel-plan__form .form-control select {
-      width: 200px;
-    }
    .form-control.viza select {
-    width: 400px;
+    width: 100%;
     border-radius: 5px;
    }
    .viz {
-    margin-top: 2.8rem;
+    margin-top: 3.3rem;
+    width: 30%;
    }
    .form-control .person {
     width: 200px;
+  }
+  .tablet-traveldate {
+    display: none;
+  }
+  .pro-traveldate {
+    display: block;
+    width: 100%;
+    margin: 32px 0 0 20px;
+    animation: zoom 0.5s ease-in-out;
   }
   .main-date {
     width: 550px;
   }
   .itenenary .dest {
     padding-left: 1rem;
+  }
+  .subscribe input {
+    height: 50px;
+  }
+  .subscribe .btn {
+    height: 50px;
   }
   .img-grid {
     width: 100%;

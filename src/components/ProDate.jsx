@@ -2,16 +2,15 @@ import React, {useState } from 'react'
 import { Stack, TextField } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers'
 
-const TravelDate = () => {
+const ProDate = () => {
     const [selectedDate, setSelectedDate] = useState(null)
   return (
     <Stack
     spacing={4}
     sx={{
-      width: "100%",
+      width: "260px",
       background: "white",
       borderRadius: "5px",
-      marginTop: "50px"
     }}
   >
     <DatePicker
@@ -26,4 +25,4 @@ const TravelDate = () => {
   )
 }
 
-export default TravelDate
+export default ProDate

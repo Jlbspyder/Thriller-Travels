@@ -110,7 +110,7 @@ const Place = () => {
       {selectedPlace && (
         <>
           <div className="explore-header">
-            <h2>{selectedPlace.title} Explore</h2>
+            <h2>Explore {selectedPlace.title}</h2>
             <p id="topic">{selectedPlace.topic}</p>
           </div>
           <div className="france-img">
