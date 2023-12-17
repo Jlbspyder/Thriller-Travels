@@ -135,10 +135,16 @@
     padding-inline: 25px;
     margin-top: 4rem;
   }
+  .mobile-explore-header h2 {
+    text-align: center;
+  }
   .mobile-main {
     display: block;
     position: relative;
     animation: zoom 0.6s ease-in-out;
+  }
+  #topic {
+    margin-left: 0;
   }
   .nexxt {
     position: absolute;
