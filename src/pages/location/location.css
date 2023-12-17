@@ -153,6 +153,9 @@
   gap: 5px;
   padding: 5px 10px;
 }
+.cal {
+  margin-right: 10px;
+}
 .picture {
   width: 300px;
   height: 100px;
@@ -204,7 +207,10 @@
     margin-top: 2rem;
   }
   .cal {
-    margin-right: 10px;
+    margin-top: 5px;
+  }
+  .review {
+    margin-top: 5px;
   }
 }
 @media (min-width: 760px) and (max-width: 1170px) {

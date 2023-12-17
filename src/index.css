@@ -340,6 +340,7 @@ input:valid {
   display: flex;
   flex-direction: column;
   width: 95%;
+  border-radius: 5px;
   min-height: 230px;
   padding-right: 1rem;
   background: rgb(130, 130, 250);
@@ -454,6 +455,7 @@ input:valid {
   position: relative;
 }
 .img-wrapper.travel {
+  position: relative;
   margin: 2rem 0;
   height: 300px;
   padding: 0;
@@ -462,6 +464,7 @@ input:valid {
   opacity: 80%;
 }
 .img-grid {
+  position: relative;
   width: 48%;
   min-height: 400px;
   padding-right: 2rem;
@@ -490,11 +493,11 @@ input:valid {
   position: absolute;
   display: none;
   width: 50%;
-  top: 35%;
+  top: 40%;
   left: 70px;
   text-align: center;
   font-size: 2rem;
-  color: #e8e4e4;
+  color: rgb(7, 7, 198);
   cursor: pointer;
 }
 .country-name.direct {
@@ -1761,6 +1764,7 @@ h1 {
   }
  .img-grid {
     width: 100%;
+    padding-right: 1rem;
   }
   .img-grid.travel {
     padding-inline: 1rem;
@@ -2289,7 +2293,7 @@ h1 {
   }
   .img-grid {
     width: 100%;
-    grid-template-columns: repeat(2, 260px);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 250px);
   }
   .img-grid.travel {

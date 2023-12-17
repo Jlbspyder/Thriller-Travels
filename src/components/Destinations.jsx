@@ -33,7 +33,7 @@ const Destinations = () => {
       </div>
       <div className="explore">
         {data.map((item, index) => (
-          <div key={index} className={index === currentIndex ? "city city-active" : "city"} onClick={() =>setCurrentIndex(index)}>
+          <div key={index} className={index === currentIndex ? "city city-active" : "city"}>
             <Destination {...item} index={index} />
           </div>
         ))}

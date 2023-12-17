@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import LightBox from "./LightBox";
 import Hotels from "./Hotels";
-import { locations } from "../data";
 
 const Offers = () => {
-  const [selectedImg, setSelectedImg] = useState(null);
   const [hotels, setHotels] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -31,9 +28,6 @@ const Offers = () => {
           <Hotels key={index} {...item} index={index} />
         ))}
       </div>
-      {selectedImg && (
-        <LightBox selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
-      )}
     </section>
   );
 };

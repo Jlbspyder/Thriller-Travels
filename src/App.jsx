@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import Hotel from "./components/Hotel";
 import Location from "./pages/location/Location";
 import Place from "./pages/place/Place";
+import Tour from "./pages/tour/Tour";
 
 
 function App() {
@@ -142,6 +143,21 @@ function App() {
                   open={handleOpen}
                />
                <Place  />
+               <Footer />
+               <SideBar openMenu={openMenu} close={handleClose} />
+              </>
+            }
+          />
+          <Route 
+            path="/tour/:id"
+            element={
+              <>
+                 <MobileHeader 
+                  openMenu={openMenu}
+                  close={handleClose}
+                  open={handleOpen}
+               />
+               <Tour  />
                <Footer />
                <SideBar openMenu={openMenu} close={handleClose} />
               </>

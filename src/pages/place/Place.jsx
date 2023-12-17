@@ -7,7 +7,6 @@ import { RxDotFilled } from "react-icons/rx";
 import { BsStopwatch } from "react-icons/bs";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import Gallery from "../../components/gallery/Gallery";
-
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import "./place.css";
 
@@ -169,7 +168,7 @@ const Place = () => {
               onTouchMove={handleTouchMove}
             >
               <div className="mobile-explore-header">
-                <h2>{selectedPlace.title} Explore</h2>
+                <h2>Explore {selectedPlace.title}</h2>
                 <p id="topic">{selectedPlace.topic}</p>
               </div>
               {Object.entries(selectedPlace.images).map(([_, value], index) => {
