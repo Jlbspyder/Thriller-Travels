@@ -8,8 +8,9 @@
   text-align: center;
 }
 #topic {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
+  margin-left: 2rem;
 }
 .france-img {
   display: flex;

@@ -132,20 +132,7 @@ const Tour = () => {
                     </div>
                   </div>
                   <div className="mobile-main-pixx">
-                    {selectedTour && <div className="tour-grid">
-                    {/* {Object.keys(selectedTour.images).map(([_, value], index) => {
-                        const { img } = value;
-                        return (
-                        <div
-                            key={index}
-                            className={index === currentIndex ? "mobile-thumb-wrapper" : ""}
-                        >
-                            {index === currentIndex && (
-                            <img src={img} className="france-pix" />
-                            )}
-                        </div>
-                        );
-                    })} */}
+                    <div className="tour-grid">
                       {tour.images.map((image, i) => (
                         <Fragment key={i}>
                           {i === currentIndex && (
@@ -157,7 +144,7 @@ const Tour = () => {
                       ))}
                        <GrPrevious className="tour-prev" onClick={handlePrevious} />
                        <GrNext className="tour-next" onClick={handleNext} />
-                    </div>}
+                    </div>
                   </div>
                 </>
                 )}
