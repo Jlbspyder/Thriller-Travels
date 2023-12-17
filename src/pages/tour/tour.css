@@ -45,9 +45,6 @@
 .tour-info h3 {
   margin: 0 0 10px 0;
 }
-.france-img {
-  background: red;
-}
 @media (max-width: 760px) {
   .tour {
     padding-left: 0;
