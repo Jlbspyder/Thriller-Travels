@@ -54,6 +54,9 @@
   margin-bottom: 3px;
   align-items: center;
 }
+.duration h5 {
+  margin: 0;
+}
 .cancel {
   display: flex;
   gap: 10px;
