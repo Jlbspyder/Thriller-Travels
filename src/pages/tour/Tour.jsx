@@ -21,7 +21,6 @@ const Tour = () => {
   const { id } = useParams();
 
   const length = gallery.length;
-  
 
   const fetchTour = async () => {
     const res = await fetch(`https://hotel-api-hpic.onrender.com/data`);
@@ -32,7 +31,6 @@ const Tour = () => {
       return;
     }
   };
-
   useEffect(() => {
     try {
       fetchTour();
@@ -64,15 +62,15 @@ const Tour = () => {
   const handleClose = () => {
     setModal(false);
   };
-//   
-//   const getGallery = () => {
-//     setModal(true);
-//     const pix = Object.entries(selectedTour.images).map(([_, value]) => {
-//       const { img } = value;
-//       return img;
-//     });
-//     setGallery(pix);
-//   };
+  //
+  //   const getGallery = () => {
+  //     setModal(true);
+  //     const pix = Object.entries(selectedTour.images).map(([_, value]) => {
+  //       const { img } = value;
+  //       return img;
+  //     });
+  //     setGallery(pix);
+  //   };
 
   const handlePrevious = () => {
     setCurrentIndex(currentIndex === 0 ? length - 1 : currentIndex - 1);
@@ -112,47 +110,52 @@ const Tour = () => {
             {selectedTour.map((tour, index) => (
               <Fragment key={tour.id}>
                 <div className="tour-header">
-                    {index === currentIndex && <h2>{tour.place}</h2>}
-                    {index === currentIndex && <p>{tour.topic}</p>}
+                  {index === currentIndex && <h2>{tour.place}</h2>}
+                  {index === currentIndex && <p>{tour.topic}</p>}
                 </div>
                 {index === currentIndex && (
-                <>
-                  <div className="main-pixx">
-                    <div className="tour-pix-wrapper">
-                      <img src={tour.pix} alt="/" className="tour-pixx" />
+                  <>
+                    <div className="main-pixx">
+                      <div className="tour-pix-wrapper">
+                        <img src={tour.pix} alt="/" className="tour-pixx" />
+                      </div>
+                      <div className="tour-grid-pix">
+                        {tour.images.map((image, i) => (
+                          <Fragment key={i}>
+                            {<img src={image.img} alt="/" className="thumb" />}
+                          </Fragment>
+                        ))}
+                      </div>
                     </div>
-                    <div className="tour-grid-pix">
-                      {tour.images.map((image, i) => (
-                        <Fragment key={i}>
-                          { (
-                            <img src={image.img} alt="/" className="thumb" />
-                          )}
-                        </Fragment>
-                      ))}
+                    <div className="mobile-main-pixx">
+                      <div className="tour-grid">
+                        {tour.images.map((image, i) => (
+                          <Fragment key={i}>
+                            {i === currentIndex && (
+                              <div className="mobile-thumb-wrapper">
+                                <img
+                                  src={image.img}
+                                  alt="/"
+                                  className="mobile-thumb"
+                                />
+                              </div>
+                            )}
+                          </Fragment>
+                        ))}
+                        <GrPrevious
+                          className="tour-prev"
+                          onClick={handlePrevious}
+                        />
+                        <GrNext className="tour-next" onClick={handleNext} />
+                      </div>
                     </div>
-                  </div>
-                  <div className="mobile-main-pixx">
-                    <div className="tour-grid">
-                      {tour.images.map((image, i) => (
-                        <Fragment key={i}>
-                          {i === currentIndex && (
-                            <div className="mobile-thumb-wrapper">
-                                <img src={image.img} alt="/" className="mobile-thumb" />
-                            </div>
-                          )}
-                        </Fragment>
-                      ))}
-                       <GrPrevious className="tour-prev" onClick={handlePrevious} />
-                       <GrNext className="tour-next" onClick={handleNext} />
-                    </div>
-                  </div>
-                </>
+                  </>
                 )}
                 {index === currentIndex && (
                   <div className="tour-info">
                     <div className="tour-info__left">
                       <p>
-                        <span id="bestseller">Best seller in Paris</span>
+                        <span id="bestseller">Best seller in {tour.name}</span>
                       </p>
                       <div className="duration">
                         <BsFillStarFill className="star" />
@@ -162,44 +165,46 @@ const Tour = () => {
                       <p>{tour.des1}</p>
                       <p>{tour.des2}</p>
                       <p>{tour.des3}</p>
-                      {tour.accessibility && <h2>Accessibility</h2>}
-                {tour.accessibility && <div className="include">
-                  <RxDotFilled className="dot" />
-                  <p>{tour.accessibility}</p>
-                </div>}
-                {<h3>Health & safety</h3>}
-                  <div className="include">
-                    <RxDotFilled className="dot" />
-                    <p>{tour.safety}</p>
-                  </div>
-                <h3>Additional information</h3>
-                <p>{tour.info}</p>
-                <h3>Itinerary information</h3>
-                <div className="include">
-                  <BsStopwatch />
-                  <p>{tour.duration}</p>
-                </div>
-                <div className="include">
-                  <HiOutlineLocationMarker />
-                  <p>Stop at: {tour.point}</p>
-                </div>
-                <h3>Location</h3>
-                <div className="include">
-                  <HiOutlineLocationMarker />
-                  <div>
-                    <h4>Departure point</h4>
-                    <p>{tour.point}</p>
-                  </div>
-                </div>
-                {tour.end && (
-                  <div className="include">
-                    <HiOutlineLocationMarker />
-                    <div>
-                      <h4>End point</h4>
-                      <p>{tour.end}</p>
-                    </div>
-                  </div>
-                )}
+                      {tour.accessibility && <h3>Accessibility</h3>}
+                      {tour.accessibility && (
+                        <div className="include">
+                          <RxDotFilled className="dot" />
+                          <p>{tour.accessibility}</p>
+                        </div>
+                      )}
+                      {<h3>Health & safety</h3>}
+                      <div className="include">
+                        <RxDotFilled className="dot" />
+                        <p>{tour.safety}</p>
+                      </div>
+                      <h3>Additional information</h3>
+                      <p>{tour.info}</p>
+                      <h3>Itinerary information</h3>
+                      <div className="include">
+                        <BsStopwatch className="tour-icon" />
+                        <p>{tour.duration}</p>
+                      </div>
+                      <div className="include">
+                        <HiOutlineLocationMarker className="tour-icon" />
+                        <p>Stop at: {tour.point}</p>
+                      </div>
+                      <h3>Location</h3>
+                      <div className="include">
+                        <HiOutlineLocationMarker className="tour-icon" />
+                        <div>
+                          <h4>Departure point</h4>
+                          <p>{tour.point}</p>
+                        </div>
+                      </div>
+                      {tour.end && (
+                        <div className="include">
+                          <HiOutlineLocationMarker className="tour-icon" />
+                          <div>
+                            <h4>End point</h4>
+                            <p>{tour.end}</p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                     <div className="ticket-info">
                       <h3>Tickets and prices</h3>

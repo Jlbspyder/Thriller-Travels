@@ -6,6 +6,7 @@
 }
 .explore-header h2 {
   text-align: center;
+  color: rgb(130, 130, 250);
 }
 #topic {
   font-size: 16px;
@@ -32,13 +33,14 @@
 .dot {
   width: 20px;
   height: 20px;
+  color: rgb(130, 130, 250);
 }
 .france-img p {
   font-size: 16px;
   color: #281f1f;
 }
 .green-check {
-  color: green;
+  color: rgb(130, 130, 250);
   width: 20px;
   height: 20px;
 }
@@ -137,6 +139,7 @@
   }
   .mobile-explore-header h2 {
     text-align: center;
+    color: rgb(130, 130, 250);
   }
   .mobile-main {
     display: block;
@@ -186,6 +189,10 @@
   .mobile-explore-header {
     padding-inline: 10px;
     margin-top: 1rem;
+  }
+  .mobile-explore-header h2 {
+    text-align: center;
+    color: rgb(130, 130, 250);
   }
   .mobile-main {
     display: block;

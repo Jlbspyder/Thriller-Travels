@@ -2,12 +2,14 @@
   margin-top: 1rem;
   padding-left: 1rem;
 }
-.tour-header h2, .tour-header p {
-    text-align: center;
+.tour-header h2 {
+  text-align: center;
+  color: rgb(130, 130, 250);
 }
 .tour-header p {
-    font-size: 16px;
-    margin-left: 2rem;
+  font-size: 16px;
+  margin-left: 2rem;
+  text-align: center;
 }
 .main-pixx {
   display: flex;
@@ -51,6 +53,13 @@
 }
 .tour-info h3 {
   margin: 0 0 10px 0;
+  color: rgb(130, 130, 250);
+}
+.tour-info h4 {
+    color: rgb(130, 130, 250);
+}
+.tour-icon {
+  color: rgb(130, 130, 250);
 }
 @media (max-width: 760px) {
   .tour {

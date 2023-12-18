@@ -199,7 +199,7 @@ const Place = () => {
                 <br />
                 <p>{selectedPlace.des1}</p>
                 <p>{selectedPlace.des2}</p>
-                {selectedPlace.option1 && <h2>What's included</h2>}
+                {selectedPlace.option1 && <h3>What's included</h3>}
                 {selectedPlace.option1 && (
                   <div className="include">
                     <FaCheck className="green-check" />
@@ -212,32 +212,32 @@ const Place = () => {
                     <p>{selectedPlace.option2}</p>
                   </div>
                 )}
-                <h2>Accessibility</h2>
+                <h3>Accessibility</h3>
                 <div className="include">
                   <RxDotFilled className="dot" />
                   <p>{selectedPlace.accessibility}</p>
                 </div>
-                {selectedPlace.safety && <h2>Health & safety</h2>}
+                {selectedPlace.safety && <h3>Health & safety</h3>}
                 {selectedPlace.safety && (
                   <div className="include">
                     <RxDotFilled className="dot" />
                     <p>{selectedPlace.safety}</p>
                   </div>
                 )}
-                <h2>Additional information</h2>
+                <h3>Additional information</h3>
                 <p>{selectedPlace.info}</p>
-                <h2>Itinerary information</h2>
+                <h3>Itinerary information</h3>
                 <div className="include">
-                  <BsStopwatch />
+                  <BsStopwatch  className="tour-icon" />
                   <p>{selectedPlace.duration}</p>
                 </div>
                 <div className="include">
-                  <HiOutlineLocationMarker />
+                  <HiOutlineLocationMarker className="tour-icon"  />
                   <p>Stop at: {selectedPlace.point}</p>
                 </div>
-                <h2>Location</h2>
+                <h3>Location</h3>
                 <div className="include">
-                  <HiOutlineLocationMarker />
+                  <HiOutlineLocationMarker className="tour-icon"  />
                   <div>
                     <h3>Departure point</h3>
                     <p>{selectedPlace.point}</p>
@@ -245,7 +245,7 @@ const Place = () => {
                 </div>
                 {selectedPlace.end && (
                   <div className="include">
-                    <HiOutlineLocationMarker />
+                    <HiOutlineLocationMarker className="tour-icon"  />
                     <div>
                       <h3>End point</h3>
                       <p>{selectedPlace.end}</p>
